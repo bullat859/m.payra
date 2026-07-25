@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -153,9 +152,6 @@
             </h1>
             <p class="text-lg sm:text-xl text-slate-300 font-medium">
                 Dynamic Edge Gesture Control
-            </p>
-            <p class="text-slate-400 font-medium text-xs sm:text-sm tracking-wide uppercase mt-3">
-                Effective Date: July 20, 2026
             </p>
 
             <!-- Google Play Store Button -->
@@ -538,6 +534,9 @@
         <footer class="text-center mt-16 pt-8 border-t border-slate-800/80 text-slate-500 text-sm flex flex-col items-center gap-3">
             <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
             <p class="text-xs text-slate-600">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
+            <p class="text-xs sm:text-sm text-slate-400 font-medium flex items-center gap-1.5 mt-1">
+                <span>❤️</span> from Madhusudan Payra
+            </p>
         </footer>
     </div>
 
