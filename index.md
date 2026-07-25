@@ -81,46 +81,8 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased">
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased pt-4 sm:pt-8">
     <div class="glow-bg"></div>
-
-    <!-- Top Sticky Navigation Bar -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-lg">
-        <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
-            <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity shrink-0">
-                <!-- Dynamic Edge Gesture Control Logo (Vector SVG) -->
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20 shrink-0 border border-white/10">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4c1d95"/>
-                                <stop offset="50%" stop-color="#1e1b4b"/>
-                                <stop offset="100%" stop-color="#b45309"/>
-                            </linearGradient>
-                            <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#38bdf8"/>
-                                <stop offset="50%" stop-color="#a855f7"/>
-                                <stop offset="100%" stop-color="#f97316"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="100" height="100" fill="url(#bgGrad)"/>
-                        <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
-                        <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
-                        <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
-                        <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
-                        <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
-                        <circle cx="50" cy="50" r="4" fill="#ffffff"/>
-                        <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </div>
-
-                <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight hidden sm:inline-block">Dynamic Edge Gesture Control</span>
-                <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight sm:hidden">Edge Control</span>
-            </a>
-        </div>
-    </header>
 
     <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16">
         
