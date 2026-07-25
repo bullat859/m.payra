@@ -484,33 +484,11 @@
                 </p>
             </section>
 
-            <!-- Section 7: User Rights (GDPR / CCPA) -->
-            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
-                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">07</span>
-                    Your Rights (GDPR / CCPA)
-                </h2>
-                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
-                    <p>Depending on your region, you have rights regarding your personal data:</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <strong class="text-blue-300 block mb-1">Opt-Out of Analytics</strong>
-                            Toggle off telemetry sharing anytime in the app Settings menu.
-                        </div>
-                        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <strong class="text-blue-300 block mb-1">Data Portability</strong>
-                            Export or backup your gesture settings locally at any time.
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 8: Contact & Support -->
+            <!-- Section 7: Contact & Support -->
             <section id="contact" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden border-2 border-blue-500/30">
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
-                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">08</span>
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">07</span>
                     Contact Us & Privacy Support
                 </h2>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
