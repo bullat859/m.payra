@@ -1,542 +1,498 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android & AI Developer Portfolio</title>
-    <meta name="description" content="Portfolio of an Android and AI Mobile App Developer.">
-    
-    <!-- Fonts -->
+    <title>Privacy Policy - Dynamic Edge Gesture Control</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            300: '#5eead4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6', // Primary Teal
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                            950: '#042f2e',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
                         }
                     }
                 }
             }
         }
     </script>
-
     <style>
         body {
-            background-color: #0f172a; /* Slate 900 */
-            color: #f8fafc; /* Slate 50 */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
         }
-        
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
         }
-
         .glass-card {
-            background: rgba(30, 41, 59, 0.5); /* Slate 800 with opacity */
-            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.35);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.3); /* Brand glow */
-            border-color: rgba(20, 184, 166, 0.3);
+            border-color: rgba(59, 130, 246, 0.35);
+            background: rgba(30, 41, 59, 0.65);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
         }
-
-        .gradient-text {
-            background: linear-gradient(to right, #2dd4bf, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .glow-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 1) 100%);
         }
-        
-        .bg-grid-pattern {
-            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        /* Scroll reveal classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Custom Scrollbar */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a; 
+            background: #030712;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155; 
-            border-radius: 4px;
+            background: #1e293b;
+            border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569; 
+            background: #3b82f6;
         }
     </style>
 </head>
-<body class="antialiased relative overflow-x-hidden selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative">
+    <div class="glow-bg"></div>
 
-    <!-- Background Decoration -->
-    <div class="fixed inset-0 z-[-1] bg-grid-pattern"></div>
-    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-500/10 blur-[120px] z-[-1] pointer-events-none"></div>
-    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[120px] z-[-1] pointer-events-none"></div>
-
-    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-blue-500 flex items-center justify-center font-display font-bold text-xl text-white shadow-lg">
-                        AI
-                    </div>
-                    <span class="font-display font-bold text-xl tracking-tight hidden sm:block">DevPortfolio</span>
+    <!-- Top Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20 font-bold text-white text-lg">
+                    ⚡
                 </div>
-
-                <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-slate-300 hover:text-brand-400 font-medium transition-colors text-sm uppercase tracking-wider">About</a>
-                    <a href="#skills" class="text-slate-300 hover:text-brand-400 font-medium transition-colors text-sm uppercase tracking-wider">Skills</a>
-                    <a href="#experience" class="text-slate-300 hover:text-brand-400 font-medium transition-colors text-sm uppercase tracking-wider">Experience</a>
-                    <a href="#apps" class="text-slate-300 hover:text-brand-400 font-medium transition-colors text-sm uppercase tracking-wider">My Apps</a>
-                    <a href="#contact" class="text-slate-300 hover:text-brand-400 font-medium transition-colors text-sm uppercase tracking-wider">Contact</a>
-                </nav>
-
-                <!-- CTA Button -->
-                <div class="hidden md:flex">
-                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)] flex items-center gap-2">
-                        <span>Hire Me</span>
-                        <i class="fa-solid fa-arrow-right text-sm"></i>
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+                <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight hidden sm:inline-block">Dynamic Edge Gesture Control</span>
+                <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight sm:hidden">Edge Control</span>
             </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10">
-            <div class="px-2 pt-2 pb-6 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#about" class="mobile-link block px-3 py-3 text-base font-medium text-slate-300 hover:text-brand-400 w-full text-center">About</a>
-                <a href="#skills" class="mobile-link block px-3 py-3 text-base font-medium text-slate-300 hover:text-brand-400 w-full text-center">Skills</a>
-                <a href="#experience" class="mobile-link block px-3 py-3 text-base font-medium text-slate-300 hover:text-brand-400 w-full text-center">Experience</a>
-                <a href="#apps" class="mobile-link block px-3 py-3 text-base font-medium text-slate-300 hover:text-brand-400 w-full text-center">My Apps</a>
-                <a href="#contact" class="mobile-link block px-3 py-3 text-base font-medium text-slate-300 hover:text-brand-400 w-full text-center">Contact</a>
-                <a href="#contact" class="mt-4 px-6 py-2 rounded-full bg-brand-500 text-white font-medium w-3/4 text-center">Hire Me</a>
-            </div>
+            
+            <nav class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
+                <a href="#overview" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Overview</a>
+                <a href="#permissions" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Permissions</a>
+                <a href="#firebase" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Firebase Services</a>
+                <a href="#contact" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all">Support</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-12 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-                
-                <!-- Text Content -->
-                <div class="order-2 lg:order-1 text-center lg:text-left z-10 reveal">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
-                        <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-                        </span>
-                        Available for freelance
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-4">
-                        Hi, I'm <span class="text-white">Madhusudan Payra</span>.<br>
-                        I build <span class="gradient-text">Smart Android Apps</span> with AI.
-                    </h1>
-                    
-                    <p class="text-lg sm:text-xl text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0">
-                        Bridging the gap between cutting-edge technology and seamless mobile experiences. Specialized in Android Studio, Firebase, and Antigravity to turn complex algorithms into pocket-sized solutions.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#apps" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-medium text-lg transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_30px_rgba(20,184,166,0.6)] flex items-center justify-center gap-2">
-                            View My Apps <i class="fa-solid fa-mobile-screen"></i>
-                        </a>
-                        <a href="https://github.com/bullat859" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-full bg-transparent border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white font-medium text-lg transition-colors flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-github text-xl"></i> GitHub Profile
-                        </a>
-                    </div>
-                    
-                    <!-- Quick Stats -->
-                    <div class="mt-12 grid grid-cols-3 gap-4 border-t border-slate-800 pt-8 max-w-lg mx-auto lg:mx-0">
-                        <div>
-                            <h3 class="text-3xl font-display font-bold text-white">2</h3>
-                            <p class="text-sm text-slate-400">Years Exp.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-display font-bold text-white">1</h3>
-                            <p class="text-sm text-slate-400">App Published</p>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-display font-bold text-white">4+</h3>
-                            <p class="text-sm text-slate-400">Core Tools</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Hero Image / Visual -->
-                <div class="order-1 lg:order-2 flex justify-center relative z-10 reveal">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                        <!-- Decorative circles -->
-                        <div class="absolute inset-0 rounded-full border border-slate-700 animate-pulse-slow"></div>
-                        <div class="absolute inset-4 rounded-full border border-slate-600"></div>
-                        <div class="absolute inset-8 rounded-full border border-brand-500/30"></div>
-                        
-                        <!-- Floating Badges -->
-                        <div class="absolute top-4 -right-4 bg-slate-800 border border-slate-700 p-3 rounded-2xl shadow-xl animate-float" style="animation-delay: 0s;">
-                            <i class="fa-brands fa-android text-4xl text-green-500"></i>
-                        </div>
-                        <div class="absolute bottom-12 -left-8 bg-slate-800 border border-slate-700 p-3 rounded-2xl shadow-xl animate-float" style="animation-delay: 2s;">
-                            <i class="fa-solid fa-brain text-4xl text-purple-500"></i>
-                        </div>
-                        <div class="absolute -bottom-4 right-8 bg-slate-800 border border-slate-700 p-3 rounded-2xl shadow-xl animate-float" style="animation-delay: 1s;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TF" class="w-10 h-10 object-contain">
-                        </div>
-
-                        <!-- Main Photo Profile -->
-                        <div class="absolute inset-4 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl bg-slate-800">
-                            <!-- Replace with your actual photo URL -->
-                            <img src="https://placehold.co/400x400/1e293b/cbd5e1?text=Your+Photo" alt="Developer Photo" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        
+        <!-- Hero Title Section -->
+        <div class="text-center mb-12 relative">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                Official Legal Transparency Notice
             </div>
-        </section>
-
-        <section id="experience" class="py-24 relative bg-slate-900/40">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Professional <span class="gradient-text">Journey</span></h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">My track record of building, optimizing, and scaling intelligent mobile applications.</p>
-                    <div class="h-1 w-20 bg-brand-500 mx-auto rounded-full mt-6"></div>
-                </div>
-
-                <div class="relative max-w-4xl mx-auto reveal">
-                    <!-- Vertical Line -->
-                    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500 via-blue-500 to-transparent opacity-30"></div>
-                    
-                    <!-- Timeline Item 1 -->
-                    <div class="relative flex flex-col md:flex-row items-start mb-16 group">
-                        <div class="hidden md:flex flex-1 justify-end pr-10 text-right">
-                            <div>
-                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Android Developer</h3>
-                                <p class="text-slate-400">Independent / App Development</p>
-                                <span class="inline-block mt-2 px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm border border-brand-500/20">2024 - 2026</span>
-                            </div>
-                        </div>
-                        <div class="absolute left-[11px] md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-slate-900 border-2 border-brand-500 z-10 group-hover:bg-brand-500 transition-colors shadow-[0_0_10px_rgba(20,184,166,0.5)] mt-1.5 md:mt-0"></div>
-                        
-                        <div class="md:hidden mb-4 pl-12 w-full">
-                            <h3 class="text-xl font-bold text-white">Android Developer</h3>
-                            <p class="text-slate-400">Independent / App Development</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm border border-brand-500/20">2024 - 2026</span>
-                        </div>
-
-                        <div class="flex-1 pl-12 md:pl-10 w-full">
-                            <div class="glass-card p-6 rounded-2xl relative">
-                                <!-- Triangle pointer -->
-                                <div class="hidden md:block absolute top-4 -left-3 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-[rgba(30,41,59,0.5)] backdrop-blur-md"></div>
-                                <ul class="list-disc list-outside ml-4 text-slate-400 space-y-2 text-sm leading-relaxed">
-                                    <li>Developed and published the Gesture Control app natively on the Google Play Store.</li>
-                                    <li>Utilized Android Studio, Firebase, and Antigravity to build a robust and seamless mobile experience.</li>
-                                    <li>Managed the full app lifecycle from conception to deployment via Google Play Console.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" class="py-24 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Featured <span class="gradient-text">Applications</span></h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">A showcase of mobile applications I've developed, focusing on clean architecture and intuitive interfaces.</p>
-                    <div class="h-1 w-20 bg-brand-500 mx-auto rounded-full mt-6"></div>
-                </div>
-
-                <div class="flex justify-center">
-                    
-                    <!-- App Card 1 -->
-                    <div class="glass-card rounded-3xl overflow-hidden reveal group flex flex-col h-full w-full max-w-md">
-                        <div class="relative h-48 bg-slate-800 flex items-center justify-center overflow-hidden">
-                            <!-- Background gradient for visual appeal -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-purple-900/50 group-hover:scale-110 transition-transform duration-500"></div>
-                            <!-- Mockup representation -->
-                            <div class="relative w-24 h-48 bg-slate-900 rounded-t-xl border-t-[6px] border-x-[6px] border-slate-700 flex flex-col translate-y-4">
-                                <div class="w-8 h-1 bg-slate-800 mx-auto rounded-b-lg mb-2"></div>
-                                <div class="flex-1 bg-[url('https://placehold.co/200x400/2dd4bf/ffffff?text=App+UI')] bg-cover bg-center rounded-sm mx-1"></div>
-                            </div>
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white text-xs px-2 py-1 rounded">On Play Store</div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 p-2 shadow-lg flex items-center justify-center">
-                                    <i class="fa-solid fa-hand-sparkles text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">Gesture Control App</h3>
-                            </div>
-                            <p class="text-slate-400 text-sm mb-4 flex-1">
-                                An innovative Android application allowing users to control their devices seamlessly using custom gestures. Built from scratch and actively maintained.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6 justify-center">
-                                <span class="text-xs text-brand-300 bg-brand-900/30 px-2 py-1 rounded">Android Studio</span>
-                                <span class="text-xs text-brand-300 bg-brand-900/30 px-2 py-1 rounded">Firebase</span>
-                                <span class="text-xs text-brand-300 bg-brand-900/30 px-2 py-1 rounded">Antigravity</span>
-                            </div>
-                            <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center text-sm font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-google-play"></i> View on Play Store
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="mt-12 text-center reveal">
-                    <a href="https://github.com/bullat859" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-300 hover:text-brand-400 transition-colors">
-                        View more on Github <i class="fa-solid fa-arrow-right-long"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-24 relative border-t border-slate-800/50 bg-slate-900/30">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="glass-card rounded-3xl p-8 sm:p-12 reveal">
-                    <div class="text-center mb-10">
-                        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Let's Build <span class="gradient-text">Something Smart</span></h2>
-                        <p class="text-slate-400">Have an app idea? Need an AI feature integrated into your existing Android project? Drop me a message.</p>
-                    </div>
-
-                    <form onsubmit="handleFormSubmit(event)" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="name" class="text-sm font-medium text-slate-300">Name</label>
-                                <input type="text" id="name" required class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors" placeholder="John Doe">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="email" class="text-sm font-medium text-slate-300">Email</label>
-                                <input type="email" id="email" required class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors" placeholder="john@example.com">
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label for="message" class="text-sm font-medium text-slate-300">Message</label>
-                            <textarea id="message" rows="4" required class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-lg transition-all duration-300 shadow-[0_0_15px_rgba(20,184,166,0.3)]">
-                            Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
-                        </button>
-                        
-                        <!-- Success Message Container -->
-                        <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-center text-sm">
-                            Message sent successfully! I'll get back to you soon.
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-center">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-blue-500 flex items-center justify-center font-display font-bold text-xl text-white shadow-lg mb-6 grayscale hover:grayscale-0 transition-all duration-300">
-                AI
-            </div>
-            <div class="flex gap-6 mb-8">
-                <a href="https://github.com/bullat859" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-500 hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-github text-xl"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#0A66C2] hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#1DA1F2] hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-twitter text-xl"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-500 hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-google-play text-xl"></i>
-                </a>
-            </div>
-            <p class="text-slate-500 text-sm">
-                &copy; <span id="year"></span> AI DevPortfolio. Designed for modern Android developers. All rights reserved.
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-4 leading-tight">
+                Privacy Policy
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 font-medium">
+                Dynamic Edge Gesture Control
+            </p>
+            <p class="text-slate-400 font-medium text-xs sm:text-sm tracking-wide uppercase mt-3">
+                Effective Date: July 20, 2026 &nbsp;•&nbsp; Document Version 2.4
             </p>
         </div>
-    </footer>
 
-    <!-- Floating AI Chatbot Widget -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <!-- Chat Window -->
-        <div id="chat-window" class="hidden mb-4 w-72 sm:w-80 glass-card border border-brand-500/30 rounded-2xl overflow-hidden shadow-2xl transform origin-bottom-right transition-all duration-300 scale-95 opacity-0">
-            <div class="bg-gradient-to-r from-brand-600 to-blue-600 p-4 flex justify-between items-center shadow-md">
-                <div class="flex items-center gap-2 text-white">
-                    <i class="fa-solid fa-robot text-lg"></i>
-                    <span class="font-bold font-display text-sm">Madhusudan's Assistant</span>
+        <!-- Quick Policy Highlights Grid -->
+        <section id="overview" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-3 border border-blue-500/20">
+                    🛡️
                 </div>
-                <button id="close-chat" class="text-white/80 hover:text-white focus:outline-none transition-colors">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
+                <h3 class="text-base font-semibold text-slate-100 mb-1">No Personal Data Sold</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">We never sell, rent, or trade your personal information, gesture configurations, or contact lists to advertisers.</p>
             </div>
-            
-            <div id="chat-messages" class="p-4 h-64 overflow-y-auto flex flex-col gap-3 bg-slate-900/90 custom-scrollbar">
-                <!-- Initial Bot Message -->
-                <div class="bg-slate-800 border border-slate-700 text-slate-200 text-sm p-3 rounded-xl rounded-tl-none self-start max-w-[85%] shadow-sm">
-                    Hi! 👋 I'm an AI assistant built to help you navigate this portfolio. Ask me about Madhusudan's <strong>skills</strong>, <strong>experience</strong>, or how to <strong>contact</strong> him!
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-3 border border-emerald-500/20">
+                    ⚙️
                 </div>
+                <h3 class="text-base font-semibold text-slate-100 mb-1">Local Processing First</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">Gesture handling, touch triggers, and screen overlays are processed 100% locally on your device for real-time speed.</p>
             </div>
-            
-            <div class="p-3 bg-slate-900 border-t border-slate-800 flex gap-2">
-                <input type="text" id="chat-input" class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder-slate-500" placeholder="Type a message...">
-                <button id="send-chat" class="bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white w-10 h-10 rounded-xl flex items-center justify-center transition-colors shadow-lg">
-                    <i class="fa-solid fa-paper-plane text-sm ml-[-2px]"></i>
-                </button>
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-3 border border-purple-500/20">
+                    🔥
+                </div>
+                <h3 class="text-base font-semibold text-slate-100 mb-1">Firebase Telemetry</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">Online diagnostics (Firebase Analytics & Crashlytics) monitor crashes and app performance to ensure stability.</p>
             </div>
+        </section>
+
+        <!-- Search Bar Filter for fast navigation -->
+        <div class="mb-10 glass-panel p-3 rounded-2xl flex items-center gap-3">
+            <svg class="w-5 h-5 text-slate-400 ml-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Location, Crashlytics)..." class="w-full bg-transparent text-sm text-slate-200 placeholder-slate-500 focus:outline-none">
         </div>
-        
-        <!-- Chat Toggle Button -->
-        <button id="chat-toggle" class="w-14 h-14 rounded-full bg-gradient-to-br from-brand-500 to-blue-600 text-white shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_30px_rgba(20,184,166,0.6)] flex items-center justify-center transition-all duration-300 hover:scale-110 group relative z-50">
-            <i class="fa-solid fa-message text-xl group-hover:hidden transition-opacity"></i>
-            <i class="fa-solid fa-robot text-2xl hidden group-hover:block transition-opacity"></i>
-            
-            <!-- Notification ping -->
-            <span class="absolute top-0 right-0 flex h-3.5 w-3.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-red-500 border-2 border-slate-900"></span>
-            </span>
-        </button>
+
+        <!-- Main Document Body -->
+        <main class="space-y-8">
+
+            <!-- Section 1: Introduction -->
+            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">01</span>
+                    Introduction & Architecture Overview
+                </h2>
+                <div class="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Welcome to <strong>Dynamic Edge Gesture Control</strong> ("we," "our," or "us"). We respect your privacy and are committed to protecting it through complete transparency regarding our data processing practices.
+                    </p>
+                    <p>
+                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app connects to secure cloud services (primarily Google Firebase) to sync online configurations, diagnose software crashes, monitor app performance, and serve rewarded ad features.
+                    </p>
+                    <p class="text-sm bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-slate-400">
+                        By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: Android Permissions Required -->
+            <section id="permissions" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">02</span>
+                    Android Permissions & Local Functionality
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+                    To deliver system-wide gesture controls, our app requests explicit permissions on your Android device. Each permission is used strictly for local automation:
+                </p>
+                
+                <div class="space-y-6">
+                    <!-- Accessibility Service -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                            <h3 class="text-lg sm:text-xl font-semibold text-blue-300 flex items-center gap-2.5">
+                                <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">🛠️</span>
+                                Accessibility Service API
+                            </h3>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold">Core Required Permission</span>
+                        </div>
+                        <p class="text-slate-300 text-base leading-relaxed mb-4">
+                            The Accessibility Service API is the foundational engine of Dynamic Edge Gesture Control. It is strictly utilized to:
+                        </p>
+                        <ul class="space-y-2.5 my-4 text-slate-300 list-none pl-0">
+                            <li class="relative pl-6 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Draw touch-sensitive gesture overlay handles (edge sliders, notches, dynamic islands, and pie menus) on top of active screens.</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Detect your swipe, tap, long-press, and drag gestures specifically within these configured edge handle zones.</li>
+                            <li class="relative pl-6 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Execute global Android system actions assigned to your gestures (e.g., Back, Home, Recent Apps, Quick Settings, Split Screen, and Power Menu).</li>
+                        </ul>
+                        <div class="bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-xl mt-4 text-red-200 text-sm leading-relaxed">
+                            <strong class="font-bold text-red-400 block mb-1">Strict Accessibility Privacy Guarantee:</strong>
+                            We do NOT use the Accessibility Service API to read screen content, inspect keystrokes, intercept passwords, log personal messages, or track your interactions within other third-party apps. Its operation is strictly confined to rendering edge UI and sending standard system navigation callbacks.
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
+                            <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">📍</span>
+                            Location Access (Foreground & Background)
+                        </h3>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Used exclusively for <strong>Situational Location Triggers</strong>. If you opt to set up geofenced gestures (e.g., auto-switching edge profiles when arriving home or at work), background location monitors when you enter or exit your chosen geofence boundary. Location coordinates are never sold or uploaded to public tracking networks.
+                        </p>
+                    </div>
+                    
+                    <!-- Usage Access -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
+                            <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">📊</span>
+                            Usage Access (Package Usage Stats)
+                        </h3>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Allows the app to identify which foreground application is currently active on your screen. This enables "App-Specific Gesture Profiles," automatically hiding edge handles or switching gesture shortcuts when specific apps (e.g., full-screen games or camera) are opened.
+                        </p>
+                    </div>
+
+                    <!-- Modify System Settings -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
+                            <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">⚙️</span>
+                            Modify System Settings (Write Settings)
+                        </h3>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Empowers your gestures to directly toggle hardware and system parameters—such as Screen Brightness, Auto-Rotate lock, Volume levels, and Screen Timeout—without opening the Android Settings app.
+                        </p>
+                    </div>
+
+                    <!-- Storage -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
+                            <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">💾</span>
+                            Storage & Media Access
+                        </h3>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Required to support local features such as the <strong>Offline Music Controller</strong> (browsing and playing local MP3 audio files), importing custom gesture icons, and saving or restoring local profile backup files (`.json`/`.xml`).
+                        </p>
+                    </div>
+
+                    <!-- Camera, Microphone, Bluetooth & Contacts -->
+                    <div class="glass-card rounded-2xl p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
+                            <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">🎙️</span>
+                            Hardware Actions (Camera, Mic, Bluetooth, Contacts)
+                        </h3>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            These permissions are requested strictly on-demand when you map a gesture to specific quick actions:
+                        </p>
+                        <ul class="list-disc list-inside text-slate-300 text-sm mt-2 space-y-1">
+                            <li><strong>Camera:</strong> Toggling the LED Flashlight on/off.</li>
+                            <li><strong>Microphone:</strong> Triggering quick audio memo recordings.</li>
+                            <li><strong>Bluetooth:</strong> Toggling Bluetooth radio state or connecting to paired devices.</li>
+                            <li><strong>Contacts & Phone:</strong> Triggering "Direct Call" or "Quick Contact" actions from a gesture swipe.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Firebase Services & Cloud Data Collection -->
+            <section id="firebase" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-amber-400 text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">03</span>
+                    Firebase Cloud Integration & Online Analytics
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+                    Although our gesture control engine operates locally, Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> (a cloud backend provided by Google LLC) to monitor stability, improve features, manage cloud configurations, and prevent software bugs.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Firebase Analytics -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>📈</span> Firebase Analytics
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Collects anonymized telemetry such as app launch frequency, feature engagement (e.g., which gesture styles are most popular), screen views, mobile device model, Android OS version, and coarse country-level location. Used strictly to optimize UI/UX.
+                        </p>
+                    </div>
+
+                    <!-- Firebase Crashlytics -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>🛠️</span> Firebase Crashlytics
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            In the event of an app crash or memory fault, Crashlytics automatically captures stack traces, active device states, memory usage at time of crash, and OS information. This allows our engineering team to swiftly issue bug fixes.
+                        </p>
+                    </div>
+
+                    <!-- Firebase Performance Monitoring -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>⚡</span> Firebase Performance Monitoring
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Measures network request latencies, app startup timings, and background memory footprint to ensure that gesture overlays render at high frame rates without draining battery life.
+                        </p>
+                    </div>
+
+                    <!-- Firebase Database & Firestore -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>🗄️</span> Firebase Realtime Database / Firestore
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Used if you choose to back up your custom edge configurations or download cloud-hosted gesture theme presets. Your configurations are tied to a unique, non-identifiable installation ID.
+                        </p>
+                    </div>
+
+                    <!-- Firebase Remote Config -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>🎛️</span> Firebase Remote Config
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Allows us to dynamically update default gesture parameters, introduce seasonal themes, or toggle feature availability without requiring a full app store update.
+                        </p>
+                    </div>
+
+                    <!-- Firebase App Distribution -->
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
+                        <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
+                            <span>🚀</span> Firebase App Distribution
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Utilized during beta testing releases to securely deliver early test builds to registered beta testers and aggregate early feedback logs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400">
+                    💡 For more details on how Google processes Firebase data, please consult Google's official privacy documentation: 
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener text-blue-400 hover:underline">Google Privacy & Terms</a> and 
+                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener text-blue-400 hover:underline">How Firebase guards user privacy</a>.
+                </div>
+            </section>
+
+            <!-- Section 4: Advertising & Third-Party Services -->
+            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">04</span>
+                    Monetization & Advertising (Google AdMob)
+                </h2>
+                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                    <p>
+                        To support ongoing development while offering core features for free, Dynamic Edge Gesture Control integrates <strong>Google AdMob</strong> to display Rewarded Video Ads and Banner Ads.
+                    </p>
+                    <ul class="space-y-2 list-disc list-inside text-sm text-slate-300">
+                        <li><strong>Advertising Identifiers:</strong> AdMob may collect and use your device’s Google Advertising ID (GAID) and IP address to deliver personalized or contextual advertisements.</li>
+                        <li><strong>Ad Personalization Controls:</strong> You can reset or opt out of personalized ad tracking directly in your device settings under <code>Settings -> Google -> Ads</code>.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5: Data Security & Retention -->
+            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">05</span>
+                    Data Storage, Encryption & Security
+                </h2>
+                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                    <p>
+                        <strong>Encryption in Transit:</strong> All communication between Dynamic Edge Gesture Control and Firebase cloud servers uses industry-standard Transport Layer Security (TLS/HTTPS) encryption.
+                    </p>
+                    <p>
+                        <strong>Data Retention & Accountless System:</strong> We do not require you to create an account with an email address or password. Because local configurations reside on your device, you hold complete ownership over your data.
+                    </p>
+                    <p>
+                        <strong>Data Deletion:</strong> Uninstalling the application immediately and permanently removes all local settings, gesture mappings, and cached media stored on your hardware. Firebase analytical logs are automatically purged on a standard 14-month rolling retention schedule set by Google analytics standards.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 6: Children's Privacy -->
+            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">06</span>
+                    Children's Privacy Protection (COPPA / GDPR)
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Our app is designed for general audiences and is not directed towards children under the age of 13 (or 16 in the European Economic Area). We do not knowingly collect personal identifiable information from children. If you become aware that a child has provided us with personal data, please contact us immediately so we can take steps to remove such information from our records.
+                </p>
+            </section>
+
+            <!-- Section 7: User Privacy Rights (GDPR / CCPA) -->
+            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">07</span>
+                    Your Legal Privacy Rights
+                </h2>
+                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                    <p>Depending on your jurisdiction (e.g., California CCPA/CPRA, European Union GDPR), you possess specific legal rights concerning your data:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <strong class="text-blue-300 block mb-1">Right to Opt-Out</strong>
+                            You can opt out of analytics data collection within the in-app Settings menu.
+                        </div>
+                        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <strong class="text-blue-300 block mb-1">Right to Access / Portability</strong>
+                            You can export your gesture profile configuration files at any time.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Contact & Support -->
+            <section id="contact" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden border-2 border-blue-500/30">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
+                    <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">08</span>
+                    Contact Us & Privacy Support
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+                    If you have questions, feedback, or concerns regarding this Privacy Policy or our Firebase data practices, please reach out directly to our support desk:
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <a href="mailto:m.payra859appsupport@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>Contact Official Support</span>
+                    </a>
+                    
+                    <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-4 rounded-2xl bg-slate-900 border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 transition-all text-sm">
+                        <span id="copyBtnText">Copy Email Address</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 pt-8 border-t border-slate-800/80 text-slate-500 text-sm flex flex-col items-center gap-3">
+            <p>&copy; 2026 Dynamic Edge Gesture Control. All rights reserved.</p>
+            <p class="text-xs text-slate-600">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
+        </footer>
     </div>
 
+    <!-- JavaScript for Search Filtering & Interactivity -->
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Navbar blur effect on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-lg');
-                navbar.style.background = 'rgba(15, 23, 42, 0.9)';
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-            }
-        });
-
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        function filterSections() {
+            const query = document.getElementById('policySearch').value.toLowerCase();
+            const sections = document.querySelectorAll('.policy-section');
+            
+            sections.forEach(section => {
+                const text = section.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
                 }
-            }
+            });
         }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
 
-        // Form submission handler (Visual only, no actual backend)
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
+        function copyEmail() {
+            const email = "m.payra859appsupport@gmail.com";
+            const btnText = document.getElementById('copyBtnText');
             
-            // Loading state
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
-            btn.disabled = true;
-            btn.classList.add('opacity-75');
-            
-            // Simulate network request
+            // Clipboard copy with fallback
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            btnText.innerText = "Copied to Clipboard! ✓";
             setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-75');
-                
-                // Show success message
-                document.getElementById('form-success').classList.remove('hidden');
-                e.target.reset(); // clear form
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('form-success').classList.add('hidden');
-                }, 5000);
-                
-            }, 1500);
+                btnText.innerText = "Copy Email Address";
+            }, 3000);
         }
     </script>
 </body>
 </html>
+
