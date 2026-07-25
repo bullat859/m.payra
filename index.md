@@ -133,9 +133,37 @@
             <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-3 leading-tight">
                 Privacy Policy
             </h1>
-            <p class="text-base sm:text-xl text-slate-300 font-medium">
-                Dynamic Edge Gesture Control
-            </p>
+
+            <!-- Subtitle with App Logo -->
+            <div class="flex items-center justify-center gap-2.5 text-base sm:text-xl text-slate-300 font-medium">
+                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg overflow-hidden shadow-md shadow-blue-500/20 shrink-0 border border-white/10">
+                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4c1d95"/>
+                                <stop offset="50%" stop-color="#1e1b4b"/>
+                                <stop offset="100%" stop-color="#b45309"/>
+                            </linearGradient>
+                            <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8"/>
+                                <stop offset="50%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#f97316"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="100" height="100" fill="url(#bgGradHero)"/>
+                        <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
+                        <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
+                        <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
+                        <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
+                        <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
+                        <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                        <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span>Dynamic Edge Gesture Control</span>
+            </div>
 
             <!-- Google Play Store Button -->
             <div class="mt-5 sm:mt-6 flex justify-center">
@@ -448,59 +476,12 @@
         </main>
 
         <!-- Footer -->
-        <footer class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 text-slate-500 text-xs sm:text-sm flex flex-col items-center gap-4">
-            
-            <!-- Bottom Navigation Bar -->
-            <nav class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm font-medium text-slate-400">
-                <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-400 transition-colors font-semibold text-slate-300">
-                    <!-- Icon copied beside Dynamic Edge Gesture Control in bottom footer -->
-                    <div class="w-5 h-5 rounded-md overflow-hidden shadow-sm shrink-0 border border-white/10">
-                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="bgGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4c1d95"/>
-                                    <stop offset="50%" stop-color="#1e1b4b"/>
-                                    <stop offset="100%" stop-color="#b45309"/>
-                                </linearGradient>
-                                <linearGradient id="neonGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#38bdf8"/>
-                                    <stop offset="50%" stop-color="#a855f7"/>
-                                    <stop offset="100%" stop-color="#f97316"/>
-                                </linearGradient>
-                            </defs>
-                            <rect width="100" height="100" fill="url(#bgGradFooter)"/>
-                            <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradFooter)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
-                            <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
-                            <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-                            <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
-                            <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
-                            <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
-                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
-                            <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <span>Dynamic Edge Gesture Control</span>
-                </a>
-                <span class="text-slate-700 hidden sm:inline">•</span>
-                <a href="#overview" class="hover:text-blue-400 transition-colors">Overview</a>
-                <span class="text-slate-700 hidden sm:inline">•</span>
-                <a href="#permissions" class="hover:text-blue-400 transition-colors">Permissions</a>
-                <span class="text-slate-700 hidden sm:inline">•</span>
-                <a href="#firebase" class="hover:text-blue-400 transition-colors">Firebase</a>
-                <span class="text-slate-700 hidden sm:inline">•</span>
-                <a href="#admob" class="hover:text-blue-400 transition-colors">AdMob</a>
-                <span class="text-slate-700 hidden sm:inline">•</span>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Support</a>
-            </nav>
-
-            <div class="space-y-1.5 pt-2">
-                <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
-                <p class="text-[11px] sm:text-xs text-slate-600 max-w-md mx-auto">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
-                <p class="text-xs sm:text-sm text-slate-400 font-medium flex items-center justify-center gap-1.5 pt-1">
-                    <span>❤️</span> from Madhusudan Payra
-                </p>
-            </div>
+        <footer class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 text-slate-500 text-xs sm:text-sm flex flex-col items-center gap-2.5">
+            <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
+            <p class="text-[11px] sm:text-xs text-slate-600 max-w-md mx-auto">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
+            <p class="text-xs sm:text-sm text-slate-400 font-medium flex items-center justify-center gap-1.5 pt-1">
+                <span>❤️</span> from Madhusudan Payra
+            </p>
         </footer>
     </div>
 
