@@ -97,7 +97,8 @@
             <nav class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
                 <a href="#overview" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Overview</a>
                 <a href="#permissions" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Permissions</a>
-                <a href="#firebase" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Firebase Services</a>
+                <a href="#firebase" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Firebase</a>
+                <a href="#admob" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">AdMob</a>
                 <a href="#contact" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all">Support</a>
             </nav>
         </div>
@@ -118,7 +119,7 @@
                 Dynamic Edge Gesture Control
             </p>
             <p class="text-slate-400 font-medium text-xs sm:text-sm tracking-wide uppercase mt-3">
-                Effective Date: July 20, 2026 &nbsp;•&nbsp; Document Version 2.4
+                Effective Date: July 20, 2026
             </p>
         </div>
 
@@ -129,30 +130,30 @@
                     🛡️
                 </div>
                 <h3 class="text-base font-semibold text-slate-100 mb-1">No Personal Data Sold</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">We never sell, rent, or trade your personal information, gesture configurations, or contact lists to advertisers.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">We never sell, rent, or trade your personal information, gesture configurations, or contact lists to third parties.</p>
             </div>
 
             <div class="glass-panel p-5 rounded-2xl border border-slate-800">
                 <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-3 border border-emerald-500/20">
                     ⚙️
                 </div>
-                <h3 class="text-base font-semibold text-slate-100 mb-1">Local Processing First</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Gesture handling, touch triggers, and screen overlays are processed 100% locally on your device for real-time speed.</p>
+                <h3 class="text-base font-semibold text-slate-100 mb-1">Local Gesture Processing</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">Gesture handling, touch triggers, and screen overlays are processed 100% locally on your device for maximum speed.</p>
             </div>
 
             <div class="glass-panel p-5 rounded-2xl border border-slate-800">
-                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-3 border border-purple-500/20">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-3 border border-amber-500/20">
                     🔥
                 </div>
-                <h3 class="text-base font-semibold text-slate-100 mb-1">Firebase Telemetry</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Online diagnostics (Firebase Analytics & Crashlytics) monitor crashes and app performance to ensure stability.</p>
+                <h3 class="text-base font-semibold text-slate-100 mb-1">Firebase & AdMob</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">Firebase handles diagnostic crash reports and database syncing, while AdMob serves optional rewarded ad features.</p>
             </div>
         </section>
 
-        <!-- Search Bar Filter for fast navigation -->
+        <!-- Search Bar Filter -->
         <div class="mb-10 glass-panel p-3 rounded-2xl flex items-center gap-3">
             <svg class="w-5 h-5 text-slate-400 ml-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Location, Crashlytics)..." class="w-full bg-transparent text-sm text-slate-200 placeholder-slate-500 focus:outline-none">
+            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, AdMob, Accessibility, Location, Crashlytics)..." class="w-full bg-transparent text-sm text-slate-200 placeholder-slate-500 focus:outline-none">
         </div>
 
         <!-- Main Document Body -->
@@ -170,7 +171,7 @@
                         Welcome to <strong>Dynamic Edge Gesture Control</strong> ("we," "our," or "us"). We respect your privacy and are committed to protecting it through complete transparency regarding our data processing practices.
                     </p>
                     <p>
-                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app connects to secure cloud services (primarily Google Firebase) to sync online configurations, diagnose software crashes, monitor app performance, and serve rewarded ad features.
+                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app connects to secure cloud services (specifically Google Firebase) to sync online configurations, diagnose software crashes, monitor app performance, and serve rewarded video ads via Google AdMob.
                     </p>
                     <p class="text-sm bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-slate-400">
                         By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
@@ -253,11 +254,11 @@
                             Storage & Media Access
                         </h3>
                         <p class="text-slate-300 text-base leading-relaxed">
-                            Required to support local features such as the <strong>Offline Music Controller</strong> (browsing and playing local MP3 audio files), importing custom gesture icons, and saving or restoring local profile backup files (`.json`/`.xml`).
+                            Required to support local features such as the <strong>Offline Music Controller</strong> (browsing and playing local MP3 audio files), importing custom gesture icons, and saving or restoring local profile backup files.
                         </p>
                     </div>
 
-                    <!-- Camera, Microphone, Bluetooth & Contacts -->
+                    <!-- Hardware Actions -->
                     <div class="glass-card rounded-2xl p-5 sm:p-6">
                         <h3 class="text-lg sm:text-xl font-semibold text-blue-300 mb-3 flex items-center gap-2.5">
                             <span class="p-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-base">🎙️</span>
@@ -276,25 +277,25 @@
                 </div>
             </section>
 
-            <!-- Section 3: Firebase Services & Cloud Data Collection -->
+            <!-- Section 3: Firebase Services & Direct Links -->
             <section id="firebase" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
                     <span class="text-amber-400 text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">03</span>
-                    Firebase Cloud Integration & Online Analytics
+                    Firebase Cloud Integration & Privacy Links
                 </h2>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-                    Although our gesture control engine operates locally, Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> (a cloud backend provided by Google LLC) to monitor stability, improve features, manage cloud configurations, and prevent software bugs.
+                    Although our gesture control engine operates locally, Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> (provided by Google LLC) for diagnostic monitoring, performance tracking, remote configurations, and cloud database synchronization.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <!-- Firebase Analytics -->
                     <div class="glass-card p-5 rounded-2xl border border-slate-800">
                         <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
                             <span>📈</span> Firebase Analytics
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Collects anonymized telemetry such as app launch frequency, feature engagement (e.g., which gesture styles are most popular), screen views, mobile device model, Android OS version, and coarse country-level location. Used strictly to optimize UI/UX.
+                            Collects anonymized telemetry such as app launch frequency, feature engagement (e.g., popular gesture styles), screen views, device model, and OS version to optimize UI performance.
                         </p>
                     </div>
 
@@ -304,7 +305,7 @@
                             <span>🛠️</span> Firebase Crashlytics
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            In the event of an app crash or memory fault, Crashlytics automatically captures stack traces, active device states, memory usage at time of crash, and OS information. This allows our engineering team to swiftly issue bug fixes.
+                            Automatically captures stack traces, memory usage, and OS state at the exact time of an application crash so our developers can patch software bugs quickly.
                         </p>
                     </div>
 
@@ -314,17 +315,17 @@
                             <span>⚡</span> Firebase Performance Monitoring
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Measures network request latencies, app startup timings, and background memory footprint to ensure that gesture overlays render at high frame rates without draining battery life.
+                            Measures network request latencies, app startup timings, and background memory footprint to ensure gesture overlays render smoothly without draining battery life.
                         </p>
                     </div>
 
-                    <!-- Firebase Database & Firestore -->
+                    <!-- Firebase Realtime Database / Firestore -->
                     <div class="glass-card p-5 rounded-2xl border border-slate-800">
                         <div class="flex items-center gap-2 mb-2 text-amber-300 font-semibold">
                             <span>🗄️</span> Firebase Realtime Database / Firestore
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Used if you choose to back up your custom edge configurations or download cloud-hosted gesture theme presets. Your configurations are tied to a unique, non-identifiable installation ID.
+                            Stores user-backed custom edge configurations and cloud-hosted theme presets linked to an anonymous installation ID.
                         </p>
                     </div>
 
@@ -334,7 +335,7 @@
                             <span>🎛️</span> Firebase Remote Config
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Allows us to dynamically update default gesture parameters, introduce seasonal themes, or toggle feature availability without requiring a full app store update.
+                            Allows dynamic updates to default gesture parameters, seasonal themes, or feature flags without requiring a full app release.
                         </p>
                     </div>
 
@@ -344,33 +345,67 @@
                             <span>🚀</span> Firebase App Distribution
                         </div>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                            Utilized during beta testing releases to securely deliver early test builds to registered beta testers and aggregate early feedback logs.
+                            Delivers pre-release beta builds to registered beta testers and collects initial feedback and crash reports.
                         </p>
                     </div>
                 </div>
 
-                <div class="mt-6 p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400">
-                    💡 For more details on how Google processes Firebase data, please consult Google's official privacy documentation: 
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener text-blue-400 hover:underline">Google Privacy & Terms</a> and 
-                    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener text-blue-400 hover:underline">How Firebase guards user privacy</a>.
+                <!-- Direct Firebase Privacy Links Box -->
+                <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200">
+                    <h4 class="font-bold text-amber-300 text-sm mb-2 flex items-center gap-2">
+                        <span>🔗</span> Official Google Firebase Privacy Links:
+                    </h4>
+                    <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                        To review how Google Firebase processes, safeguards, and retains data on our behalf, please visit their official documentation links below:
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-xs font-medium">
+                        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all">
+                            <span>Firebase Privacy & Security Information</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all">
+                            <span>Google General Privacy Policy</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- Section 4: Advertising & Third-Party Services -->
-            <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+            <!-- Section 4: Google AdMob Privacy Policy & Links -->
+            <section id="admob" class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
                     <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">04</span>
-                    Monetization & Advertising (Google AdMob)
+                    Monetization, AdMob & Advertising Links
                 </h2>
-                <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                <div class="space-y-4 text-slate-300 text-base leading-relaxed mb-6">
                     <p>
-                        To support ongoing development while offering core features for free, Dynamic Edge Gesture Control integrates <strong>Google AdMob</strong> to display Rewarded Video Ads and Banner Ads.
+                        To support ongoing development while offering free core features, Dynamic Edge Gesture Control integrates <strong>Google AdMob</strong> to display Rewarded Video Ads and Banner Ads.
                     </p>
                     <ul class="space-y-2 list-disc list-inside text-sm text-slate-300">
-                        <li><strong>Advertising Identifiers:</strong> AdMob may collect and use your device’s Google Advertising ID (GAID) and IP address to deliver personalized or contextual advertisements.</li>
-                        <li><strong>Ad Personalization Controls:</strong> You can reset or opt out of personalized ad tracking directly in your device settings under <code>Settings -> Google -> Ads</code>.</li>
+                        <li><strong>Advertising Identifiers:</strong> AdMob may collect and use your device’s Google Advertising ID (GAID), IP address, and device characteristics to deliver personalized or contextual advertisements.</li>
+                        <li><strong>Opt-Out Options:</strong> You can reset or opt out of personalized ad tracking on your device under <code>Settings -> Google -> Ads</code>.</li>
                     </ul>
+                </div>
+
+                <!-- Direct AdMob Privacy Links Box -->
+                <div class="p-5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-200">
+                    <h4 class="font-bold text-blue-300 text-sm mb-2 flex items-center gap-2">
+                        <span>📢</span> Official Google AdMob Privacy & Policy Links:
+                    </h4>
+                    <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                        For complete details regarding how Google AdMob collects data, manages personalized advertising, and complies with privacy standards, refer to these official links:
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-xs font-medium">
+                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all">
+                            <span>Google Advertising Policies & Privacy</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all">
+                            <span>Google AdMob Behavioural Advertising Help</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -379,17 +414,17 @@
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
                     <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">05</span>
-                    Data Storage, Encryption & Security
+                    Data Security, Encryption & Retention
                 </h2>
                 <div class="space-y-4 text-slate-300 text-base leading-relaxed">
                     <p>
-                        <strong>Encryption in Transit:</strong> All communication between Dynamic Edge Gesture Control and Firebase cloud servers uses industry-standard Transport Layer Security (TLS/HTTPS) encryption.
+                        <strong>Encryption in Transit:</strong> All communications between Dynamic Edge Gesture Control and Firebase servers are encrypted using Transport Layer Security (TLS/HTTPS).
                     </p>
                     <p>
-                        <strong>Data Retention & Accountless System:</strong> We do not require you to create an account with an email address or password. Because local configurations reside on your device, you hold complete ownership over your data.
+                        <strong>Data Retention & Accountless Operation:</strong> We do not require account registration or personal email logins. Gesture profile configurations are stored locally on your device hardware.
                     </p>
                     <p>
-                        <strong>Data Deletion:</strong> Uninstalling the application immediately and permanently removes all local settings, gesture mappings, and cached media stored on your hardware. Firebase analytical logs are automatically purged on a standard 14-month rolling retention schedule set by Google analytics standards.
+                        <strong>Data Deletion:</strong> Uninstalling the application permanently removes all local settings and cached profile data. Firebase analytics logs are automatically purged according to standard Google 14-month rolling retention cycles.
                     </p>
                 </div>
             </section>
@@ -402,27 +437,27 @@
                     Children's Privacy Protection (COPPA / GDPR)
                 </h2>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                    Our app is designed for general audiences and is not directed towards children under the age of 13 (or 16 in the European Economic Area). We do not knowingly collect personal identifiable information from children. If you become aware that a child has provided us with personal data, please contact us immediately so we can take steps to remove such information from our records.
+                    Our application is intended for general audiences and does not knowingly collect personal identifiable information from children under 13 (or 16 in the European Union). If you suspect a child has provided us with personal information, please contact us so we can promptly delete it.
                 </p>
             </section>
 
-            <!-- Section 7: User Privacy Rights (GDPR / CCPA) -->
+            <!-- Section 7: User Rights (GDPR / CCPA) -->
             <section class="policy-section glass-panel rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-xl sm:text-2xl font-bold text-slate-100 mb-4 flex items-center gap-3">
                     <span class="text-blue-400 text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">07</span>
-                    Your Legal Privacy Rights
+                    Your Rights (GDPR / CCPA)
                 </h2>
                 <div class="space-y-4 text-slate-300 text-base leading-relaxed">
-                    <p>Depending on your jurisdiction (e.g., California CCPA/CPRA, European Union GDPR), you possess specific legal rights concerning your data:</p>
+                    <p>Depending on your region, you have rights regarding your personal data:</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                         <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <strong class="text-blue-300 block mb-1">Right to Opt-Out</strong>
-                            You can opt out of analytics data collection within the in-app Settings menu.
+                            <strong class="text-blue-300 block mb-1">Opt-Out of Analytics</strong>
+                            Toggle off telemetry sharing anytime in the app Settings menu.
                         </div>
                         <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
-                            <strong class="text-blue-300 block mb-1">Right to Access / Portability</strong>
-                            You can export your gesture profile configuration files at any time.
+                            <strong class="text-blue-300 block mb-1">Data Portability</strong>
+                            Export or backup your gesture settings locally at any time.
                         </div>
                     </div>
                 </div>
@@ -436,13 +471,13 @@
                     Contact Us & Privacy Support
                 </h2>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-                    If you have questions, feedback, or concerns regarding this Privacy Policy or our Firebase data practices, please reach out directly to our support desk:
+                    If you have questions, feedback, or concerns regarding this Privacy Policy or our third-party integrations, please contact support:
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <a href="mailto:m.payra859appsupport@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        <span>Contact Official Support</span>
+                        <span>Contact Support</span>
                     </a>
                     
                     <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-4 rounded-2xl bg-slate-900 border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 transition-all text-sm">
@@ -479,7 +514,6 @@
             const email = "m.payra859appsupport@gmail.com";
             const btnText = document.getElementById('copyBtnText');
             
-            // Clipboard copy with fallback
             const tempInput = document.createElement('input');
             tempInput.value = email;
             document.body.appendChild(tempInput);
@@ -495,4 +529,3 @@
     </script>
 </body>
 </html>
-
