@@ -87,8 +87,8 @@
     <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-lg">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20 font-bold text-white text-lg">
-                    ⚡
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20 font-bold text-white text-lg overflow-hidden">
+                    <img src="images/1784303219.png" alt="1784303219.png" height="auto" class="w-full h-full object-cover">
                 </div>
                 <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight hidden sm:inline-block">Dynamic Edge Gesture Control</span>
                 <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight sm:hidden">Edge Control</span>
