@@ -1,6 +1,4 @@
-<html lang="en" class="dark scroll-smooth">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Dynamic Edge Gesture Control</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
