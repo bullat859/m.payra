@@ -86,8 +86,7 @@
     <!-- Top Sticky Navigation Bar -->
     <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-lg">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                
+            <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
                 <!-- Dynamic Edge Gesture Control Logo (Vector SVG matching app icon) -->
                 <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-blue-500/20 shrink-0 border border-white/10">
                     <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +128,7 @@
 
                 <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight hidden sm:inline-block">Dynamic Edge Gesture Control</span>
                 <span class="font-bold text-slate-100 text-sm sm:text-base tracking-tight sm:hidden">Edge Control</span>
-            </div>
+            </a>
             
             <nav class="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-medium">
                 <a href="#overview" class="text-slate-400 hover:text-blue-400 transition-colors px-2.5 py-1.5 rounded-lg hover:bg-slate-800/50">Overview</a>
@@ -158,6 +157,17 @@
             <p class="text-slate-400 font-medium text-xs sm:text-sm tracking-wide uppercase mt-3">
                 Effective Date: July 20, 2026
             </p>
+
+            <!-- Google Play Store Button -->
+            <div class="mt-6 flex justify-center">
+                <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-blue-500/50 text-slate-200 text-xs sm:text-sm font-semibold transition-all hover:bg-slate-800 shadow-md transform hover:-translate-y-0.5">
+                    <svg class="w-5 h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L18.81,13.12C19.86,12.55 19.86,11.45 18.81,10.88L16.81,8.88L14.81,10.88L14.81,13.12L16.81,15.12M13.69,12L3.84,2.15L15.39,8.81L13.69,12M13.69,12L15.39,15.19L3.84,21.85L13.69,12Z"/>
+                    </svg>
+                    <span>Get it on Google Play</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
         </div>
 
         <!-- Quick Policy Highlights Grid -->
@@ -205,7 +215,7 @@
                 </h2>
                 <div class="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
                     <p>
-                        Welcome to <strong>Dynamic Edge Gesture Control</strong> ("we," "our," or "us"). We respect your privacy and are committed to protecting it through complete transparency regarding our data processing practices.
+                        Welcome to <strong>Dynamic Edge Gesture Control</strong>. We respect your privacy and are committed to protecting it through complete transparency regarding our data processing practices.
                     </p>
                     <p>
                         Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app connects to secure cloud services (specifically Google Firebase) to sync online configurations, diagnose software crashes, monitor app performance, and serve rewarded video ads via Google AdMob.
@@ -526,7 +536,7 @@
 
         <!-- Footer -->
         <footer class="text-center mt-16 pt-8 border-t border-slate-800/80 text-slate-500 text-sm flex flex-col items-center gap-3">
-            <p>&copy; 2026 Dynamic Edge Gesture Control. All rights reserved.</p>
+            <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
             <p class="text-xs text-slate-600">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
         </footer>
     </div>
