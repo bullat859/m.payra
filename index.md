@@ -1,4 +1,15 @@
-
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Privacy Policy - Dynamic Edge Gesture Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -130,23 +141,23 @@
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20">
                     🛡️
                 </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">No Personal Data Sold</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">We never sell, rent, or trade your personal information, gesture configurations, or contact lists to third parties.</p>
+                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Analytics vs. Personal Data</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">We collect essential usage and crash analytics to improve our app. However, your personal photos, videos, audio recordings, and custom notes are stored locally and are never uploaded to our servers.</p>
             </div>
 
             <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-amber-500/20">
                     🔥
                 </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Firebase & AdMob</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Firebase handles diagnostic crash reports and database syncing, while AdMob serves optional rewarded ad features.</p>
+                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Firebase & AdMob Integration</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting and remote configuration syncing, while Google AdMob serves optional rewarded ad features.</p>
             </div>
         </section>
 
         <!-- Search Bar Filter -->
         <div class="mb-8 sm:mb-10 glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5">
             <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Location)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
+            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
         </div>
 
         <!-- Main Document Body -->
@@ -161,10 +172,10 @@
                 </h2>
                 <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
                     <p>
-                        Welcome to <strong>Dynamic Edge Gesture Control</strong>. We respect your privacy and are committed to protecting it through complete transparency regarding our data processing practices.
+                        Welcome to <strong>Dynamic Edge Gesture Control</strong>. We value your trust and are committed to complete transparency regarding our data processing practices.
                     </p>
                     <p>
-                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app connects to secure cloud services (specifically Google Firebase) to sync online configurations, diagnose software crashes, monitor app performance, and serve rewarded video ads via Google AdMob.
+                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app does connect to secure cloud services (specifically Google Firebase). We use these services to collect essential usage telemetry, diagnose software crashes, monitor app performance, and sync configurations. We also use Google AdMob to serve rewarded video ads.
                     </p>
                     <p class="text-xs sm:text-sm bg-slate-900/80 border border-slate-800 p-3.5 sm:p-4 rounded-xl text-slate-400">
                         By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
@@ -177,10 +188,10 @@
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
-                    Android Permissions
+                    Android Permissions & Local Features
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-                    To deliver system-wide gesture controls, our app requests explicit permissions on your Android device. Each permission is used strictly for local automation:
+                    To deliver system-wide gesture controls, our app requests explicit permissions on your Android device. Each permission is used strictly for local automation and the features you trigger:
                 </p>
                 
                 <div class="space-y-4 sm:space-y-6">
@@ -251,14 +262,70 @@
                         </p>
                     </div>
 
-                    <!-- Hardware Actions -->
+                    <!-- Notes Feature -->
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📝</span>
+                            In-App Notes Feature
+                        </h3>
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
+                            Our application includes a local feature allowing you to create and save custom text notes for quick reference or task management.
+                        </p>
+                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
+                            Any text, notes, or personal information you type into the notes feature are <strong>stored strictly offline on your device</strong>. We do not read, collect, sync, or transmit your note data to any external cloud server.
+                        </div>
+                    </div>
+
+                    <!-- Camera (Silent Recording) -->
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📸</span>
+                            Camera (Flashlight & Silent Recording)
+                        </h3>
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
+                            Requested strictly on-demand when mapping gestures to toggle the device flashlight, or to utilize the app's <strong>silent photo and video recording</strong> functions.
+                        </p>
+                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
+                            All photos and videos captured using the silent recording feature are saved <strong>exclusively to your local device storage</strong>. We do not collect, upload, or transmit your personal media files to any cloud server.
+                        </div>
+                    </div>
+
+                    <!-- Microphone (Audio Memos) -->
                     <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
                         <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
                             <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🎙️</span>
-                            Hardware Actions
+                            Microphone (Silent Audio & Video)
+                        </h3>
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
+                            Requested strictly on-demand when mapping gestures to record Audio Memos or capturing video with sound. The microphone is only activated when explicitly triggered by your gesture.
+                        </p>
+                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
+                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
+                            Similar to the camera functionality, all audio recordings are <strong>saved entirely on your device's local storage</strong>. We never collect or monitor your voice or background audio.
+                        </div>
+                    </div>
+
+                    <!-- Bluetooth -->
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📶</span>
+                            Bluetooth
                         </h3>
                         <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to Flashlight (Camera), Audio Memos (Microphone), Bluetooth toggles, or Direct Calling (Contacts & Phone).
+                            Requested strictly on-demand when mapping gestures to toggle your device's Bluetooth connection state.
+                        </p>
+                    </div>
+
+                    <!-- Contacts & Phone -->
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📞</span>
+                            Contacts & Phone
+                        </h3>
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
+                            Requested strictly on-demand when mapping gestures to initiate Direct Calling. We do not store, upload, or share your contact list data.
                         </p>
                     </div>
                 </div>
@@ -272,7 +339,7 @@
                     Firebase Integration
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> for diagnostic monitoring, performance tracking, remote configurations, and cloud database synchronization.
+                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring, performance tracking, remote configurations, and cloud synchronization.
                 </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-6">
@@ -281,7 +348,7 @@
                             <span>📈</span> Firebase Analytics
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Collects anonymized telemetry such as app launch frequency and feature usage to optimize UI performance.
+                            Collects telemetry data such as app launch frequency, screen views, and feature usage to help us optimize the user interface and app performance.
                         </p>
                     </div>
 
@@ -290,7 +357,7 @@
                             <span>🛠️</span> Firebase Crashlytics
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Captures stack traces and state during application crashes to allow rapid software bug fixes.
+                            Automatically captures and transmits stack traces and device state during application crashes to allow us to issue rapid software bug fixes.
                         </p>
                     </div>
 
@@ -299,7 +366,7 @@
                             <span>⚡</span> Performance Monitoring
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Measures startup timings and background memory footprint to ensure light battery usage.
+                            Measures startup timings and background memory footprint to ensure light battery usage across different devices.
                         </p>
                     </div>
 
@@ -308,7 +375,7 @@
                             <span>🗄️</span> Realtime Database
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Stores user-backed custom edge configurations linked to an anonymous installation ID.
+                            Stores user-backed custom edge configurations linked to an anonymous installation ID for seamless synchronization.
                         </p>
                     </div>
                 </div>
@@ -378,10 +445,10 @@
                         <strong>Encryption in Transit:</strong> All network communications with Firebase servers use Transport Layer Security (TLS/HTTPS).
                     </p>
                     <p>
-                        <strong>Data Retention:</strong> Gesture profile configurations are stored locally on your device hardware. No personal account logins are required.
+                        <strong>Data Retention:</strong> Gesture profile configurations, user-generated media files, and personal text notes are stored locally on your device hardware. No personal account logins are required.
                     </p>
                     <p>
-                        <strong>Data Deletion:</strong> Uninstalling the application permanently removes all local settings and profile data.
+                        <strong>Data Deletion:</strong> Uninstalling the application permanently removes all local settings, saved media and notes generated by the app, and profile data from your device.
                     </p>
                 </div>
             </section>
@@ -411,7 +478,7 @@
                 
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                     <a href="mailto:m.payra859appsupport@gmail.com" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-base shadow-lg shadow-blue-500/25 transition-all text-center">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <span>Contact Support</span>
                     </a>
                     
@@ -467,3 +534,5 @@
     </script>
 </body>
 </html>
+
+
