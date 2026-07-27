@@ -79,9 +79,24 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #3b82f6;
         }
+        
+        /* Hide scrollbar for quick links but allow scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased pt-4 sm:pt-8">
+    
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 z-50 bg-slate-900">
+        <div id="progressBar" class="h-full bg-gradient-to-r from-blue-400 via-indigo-500 to-amber-500 w-0 transition-all duration-150 ease-out"></div>
+    </div>
+
     <div class="glow-bg"></div>
 
     <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16">
@@ -93,34 +108,42 @@
             </h1>
 
             <!-- Subtitle with App Logo -->
-            <div class="flex items-center justify-center gap-2.5 text-base sm:text-xl text-slate-300 font-medium">
-                <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg overflow-hidden shadow-md shadow-blue-500/20 shrink-0 border border-white/10">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4c1d95"/>
-                                <stop offset="50%" stop-color="#1e1b4b"/>
-                                <stop offset="100%" stop-color="#b45309"/>
-                            </linearGradient>
-                            <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#38bdf8"/>
-                                <stop offset="50%" stop-color="#a855f7"/>
-                                <stop offset="100%" stop-color="#f97316"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="100" height="100" fill="url(#bgGradHero)"/>
-                        <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
-                        <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
-                        <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
-                        <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
-                        <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
-                        <circle cx="50" cy="50" r="4" fill="#ffffff"/>
-                        <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+            <div class="flex flex-col items-center justify-center gap-3">
+                <div class="flex items-center justify-center gap-2.5 text-base sm:text-xl text-slate-300 font-medium">
+                    <div class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg overflow-hidden shadow-md shadow-blue-500/20 shrink-0 border border-white/10">
+                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4c1d95"/>
+                                    <stop offset="50%" stop-color="#1e1b4b"/>
+                                    <stop offset="100%" stop-color="#b45309"/>
+                                </linearGradient>
+                                <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#38bdf8"/>
+                                    <stop offset="50%" stop-color="#a855f7"/>
+                                    <stop offset="100%" stop-color="#f97316"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="100" fill="url(#bgGradHero)"/>
+                            <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
+                            <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
+                            <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
+                            <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
+                            <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
+                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                            <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span>Dynamic Edge Gesture Control</span>
                 </div>
-                <span>Dynamic Edge Gesture Control</span>
+                
+                <!-- Last Updated Badge -->
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400">
+                    <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>Last Updated: July 27, 2026</span>
+                </div>
             </div>
 
             <!-- Google Play Store Button -->
@@ -154,17 +177,29 @@
             </div>
         </section>
 
-        <!-- Search Bar Filter -->
-        <div class="mb-8 sm:mb-10 glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5">
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
+        <!-- Search Bar & Navigation Filter -->
+        <div class="mb-8 sm:mb-10">
+            <div class="glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5 mb-3">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-2">
+                <a href="#intro" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Intro</a>
+                <a href="#permissions" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Permissions</a>
+                <a href="#firebase" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/30 transition-colors">Firebase</a>
+                <a href="#admob" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">AdMob</a>
+                <a href="#security" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Security</a>
+                <a href="#contact" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Contact</a>
+            </div>
         </div>
 
         <!-- Main Document Body -->
         <main class="space-y-6 sm:space-y-8">
 
             <!-- Section 1: Introduction -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">01</span>
@@ -184,7 +219,7 @@
             </section>
 
             <!-- Section 2: Android Permissions Required -->
-            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
@@ -332,7 +367,7 @@
             </section>
 
             <!-- Section 3: Firebase Services & Direct Links -->
-            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-amber-500/20">03</span>
@@ -399,7 +434,7 @@
             </section>
 
             <!-- Section 4: Google AdMob Privacy Policy & Links -->
-            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">04</span>
@@ -434,7 +469,7 @@
             </section>
 
             <!-- Section 5: Data Security & Retention -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">05</span>
@@ -454,7 +489,7 @@
             </section>
 
             <!-- Section 6: Children's Privacy -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
+            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">06</span>
@@ -466,7 +501,7 @@
             </section>
 
             <!-- Section 7: Contact & Support -->
-            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30">
+            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30 pt-12 sm:pt-14">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">07</span>
@@ -478,7 +513,7 @@
                 
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                     <a href="mailto:m.payra859appsupport@gmail.com" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-base shadow-lg shadow-blue-500/25 transition-all text-center">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <span>Contact Support</span>
                     </a>
                     
@@ -498,6 +533,11 @@
             </p>
         </footer>
     </div>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600/90 text-white shadow-lg shadow-blue-500/30 border border-blue-400/30 opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:bg-blue-500">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
+    </button>
 
     <!-- JavaScript for Search Filtering & Interactivity -->
     <script>
@@ -526,11 +566,30 @@
             document.execCommand('copy');
             document.body.removeChild(tempInput);
 
-            btnText.innerText = "Copied to Clipboard! ✓";
+            btnText.innerText = "Copied! ✓";
             setTimeout(() => {
                 btnText.innerText = "Copy Email Address";
             }, 3000);
         }
+        
+        // Scroll Event Listener for Progress Bar and Scroll-To-Top button
+        window.addEventListener('scroll', () => {
+            // Calculate scroll progress
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+            
+            // Show/Hide Scroll to Top button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (winScroll > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
     </script>
 </body>
 </html>
