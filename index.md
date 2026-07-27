@@ -99,7 +99,7 @@
 
     <div class="glow-bg"></div>
 
-    <!-- COMPACT STICKY NAVBAR (Shows full name, wraps elegantly on mobile) -->
+    <!-- COMPACT STICKY NAVBAR -->
     <div class="sticky top-0 z-40 w-full mb-6 sm:mb-8 pt-1 sm:pt-2 px-2 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div class="glass-panel px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 flex flex-row items-center justify-between gap-3 border border-slate-700/50 transition-all">
             
@@ -194,7 +194,7 @@
         <div class="mb-8 sm:mb-10">
             <div class="glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5 mb-3">
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Firebase, Accessibility, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
+                <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Notifications, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
             </div>
             
             <!-- Quick Links -->
@@ -266,6 +266,17 @@
                         </div>
                     </div>
 
+                    <!-- Notifications -->
+                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
+                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🔔</span>
+                            Notifications
+                        </h3>
+                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
+                            Requested to run essential background foreground services. This ensures that the gesture engine continues to run reliably in the background without being killed by the Android system. It is also used to display media controls or quick settings directly in your notification panel.
+                        </p>
+                    </div>
+
                     <!-- Location -->
                     <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
                         <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
@@ -299,14 +310,14 @@
                         </p>
                     </div>
 
-                    <!-- Storage -->
+                    <!-- Storage, Music & Audio Access -->
                     <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
                         <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">💾</span>
-                            Storage & Media Access
+                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🎵</span>
+                            Music & Audio / Storage Access
                         </h3>
                         <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Required for local features such as the <strong>Offline Music Controller</strong>, importing custom icons, and saving/restoring gesture backups.
+                            Required for local features such as the <strong>Offline Music Controller</strong>, playing media audio files, importing custom icons, and saving/restoring gesture backups.
                         </p>
                     </div>
 
@@ -355,14 +366,14 @@
                         </div>
                     </div>
 
-                    <!-- Bluetooth -->
+                    <!-- Nearby Devices (Bluetooth) -->
                     <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
                         <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
                             <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📶</span>
-                            Bluetooth
+                            Nearby Devices (Bluetooth)
                         </h3>
                         <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to toggle your device's Bluetooth connection state.
+                            Requested strictly on-demand when mapping gestures to toggle your device's Bluetooth connection state and search for or connect to nearby devices.
                         </p>
                     </div>
 
