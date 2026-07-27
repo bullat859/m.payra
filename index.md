@@ -33,7 +33,8 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #030712;
-            overflow-x: hidden;
+            /* Changed from hidden to clip to guarantee position:sticky works flawlessly on all mobile devices */
+            overflow-x: clip; 
         }
         .glass-panel {
             background: rgba(17, 24, 39, 0.75);
@@ -99,12 +100,12 @@
 
     <div class="glow-bg"></div>
 
-    <!-- COMPACT STICKY NAVBAR -->
-    <div class="sticky top-0 z-40 w-full mb-6 sm:mb-8 pt-1 sm:pt-2 px-2 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="glass-panel px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 flex flex-row items-center justify-center gap-3 border border-slate-700/50 transition-all">
+    <!-- COMPACT & WIDE STICKY NAVBAR -->
+    <div class="sticky top-0 z-40 w-full mb-6 sm:mb-8 pt-1 sm:pt-2 px-2 sm:px-4 lg:px-6 max-w-[98%] md:max-w-6xl xl:max-w-7xl mx-auto">
+        <div class="glass-panel px-3 sm:px-6 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/60 flex flex-row items-center justify-center gap-3 border border-slate-700/50 transition-all w-full">
             
             <!-- App Logo & Name -->
-            <div class="flex items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm">
+            <div class="flex items-center justify-center gap-2.5 sm:gap-3 w-full">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
                     <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -131,8 +132,8 @@
                         <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <!-- Full name centered and always in one line -->
-                <span class="text-[13px] sm:text-[15px] font-bold text-slate-100 truncate whitespace-nowrap">
+                <!-- Full name centered and always in one horizontal line -->
+                <span class="text-[13px] sm:text-[16px] font-bold text-slate-100 truncate whitespace-nowrap">
                     Dynamic Edge Gesture Control
                 </span>
             </div>
@@ -140,7 +141,7 @@
     </div>
 
     <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16">
+    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative">
         
         <!-- Big Hero Title (Non-Sticky, Scrolls away normally) -->
         <div class="text-center mb-8 sm:mb-12 mt-2 sm:mt-6">
@@ -178,19 +179,20 @@
                     🔥
                 </div>
                 <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Firebase & AdMob Integration</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting and remote configuration syncing, while Google AdMob serves optional rewarded ad features.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting, while Google AdMob serves optional rewarded ad features.</p>
             </div>
         </section>
 
-        <!-- Search Bar & Navigation Filter -->
-        <div class="mb-8 sm:mb-10">
-            <div class="glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5 mb-3">
+        <!-- SECONDARY STICKY HEADER: Search Bar & Navigation Filter -->
+        <!-- Sticks directly underneath the main header when scrolling -->
+        <div class="sticky top-[58px] sm:top-[76px] z-30 pt-2 pb-3 mb-8 sm:mb-10 bg-[#030712]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20 mx-[-12px] px-[12px] sm:mx-0 sm:px-4 sm:rounded-2xl transition-all">
+            <div class="glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5 mb-2.5">
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Notifications, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
             </div>
             
             <!-- Quick Links -->
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-2">
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-1">
                 <a href="#intro" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Intro</a>
                 <a href="#permissions" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Permissions</a>
                 <a href="#firebase" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/30 transition-colors">Firebase</a>
@@ -204,7 +206,8 @@
         <main class="space-y-6 sm:space-y-8">
 
             <!-- Section 1: Introduction -->
-            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <!-- Adjusted padding to offset the sticky headers gracefully -->
+            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">01</span>
@@ -215,7 +218,7 @@
                         Welcome to <strong>Dynamic Edge Gesture Control</strong>. We value your trust and are committed to complete transparency regarding our data processing practices.
                     </p>
                     <p>
-                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app does connect to secure cloud services (specifically Google Firebase). We use these services to collect essential usage telemetry, diagnose software crashes, monitor app performance, and sync configurations. We also use Google AdMob to serve rewarded video ads.
+                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app does connect to secure cloud services (specifically Google Firebase). We use these services to collect essential usage telemetry, diagnose software crashes, and monitor app performance. We also use Google AdMob to serve rewarded video ads.
                     </p>
                     <p class="text-xs sm:text-sm bg-slate-900/80 border border-slate-800 p-3.5 sm:p-4 rounded-xl text-slate-400">
                         By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
@@ -224,7 +227,7 @@
             </section>
 
             <!-- Section 2: Android Permissions Required -->
-            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
@@ -324,7 +327,7 @@
                         </p>
                         <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
                             <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            Any text, notes, or personal information you type into the notes feature are <strong>stored strictly offline on your device</strong>. We do not read, collect, sync, or transmit your note data to any external cloud server.
+                            Any text, notes, or personal information you type into the notes feature are <strong>stored strictly offline on your device</strong>. We do not read, collect, or transmit your note data to any external cloud server.
                         </div>
                     </div>
 
@@ -383,14 +386,14 @@
             </section>
 
             <!-- Section 3: Firebase Services & Direct Links -->
-            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-amber-500/20">03</span>
                     Firebase Integration
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring, performance tracking, remote configurations, and cloud synchronization.
+                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring and performance tracking.
                 </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-6">
@@ -426,7 +429,7 @@
                             <span>🗄️</span> Realtime Database
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Stores user-backed custom edge configurations linked to an anonymous installation ID for seamless synchronization.
+                            Stores essential edge configuration data locally and securely linked to an anonymous installation ID.
                         </p>
                     </div>
                 </div>
@@ -450,7 +453,7 @@
             </section>
 
             <!-- Section 4: Google AdMob Privacy Policy & Links -->
-            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">04</span>
@@ -485,7 +488,7 @@
             </section>
 
             <!-- Section 5: Data Security & Retention -->
-            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">05</span>
@@ -505,7 +508,7 @@
             </section>
 
             <!-- Section 6: Children's Privacy -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">06</span>
@@ -517,7 +520,7 @@
             </section>
 
             <!-- Section 7: Contact & Support -->
-            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30 pt-12 sm:pt-14 mt-[-2rem] sm:mt-[-3rem]">
+            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30 pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">07</span>
