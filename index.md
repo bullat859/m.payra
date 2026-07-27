@@ -183,16 +183,11 @@
             </div>
         </section>
 
-        <!-- SECONDARY STICKY HEADER: Search Bar & Navigation Filter -->
+        <!-- SECONDARY STICKY HEADER: Navigation Filter -->
         <!-- Sticks directly underneath the main header when scrolling -->
         <div class="sticky top-[58px] sm:top-[76px] z-30 pt-2 pb-3 mb-8 sm:mb-10 bg-[#030712]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20 mx-[-12px] px-[12px] sm:mx-0 sm:px-4 sm:rounded-2xl transition-all">
-            <div class="glass-panel p-2.5 sm:p-3 rounded-2xl flex items-center gap-2.5 mb-2.5">
-                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 ml-1.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" id="policySearch" onkeyup="filterSections()" placeholder="Search terms (e.g. Notifications, Notes, Camera)..." class="w-full bg-transparent text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none py-1">
-            </div>
-            
             <!-- Quick Links -->
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-1">
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-1 justify-start sm:justify-center">
                 <a href="#intro" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Intro</a>
                 <a href="#permissions" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Permissions</a>
                 <a href="#firebase" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/30 transition-colors">Firebase</a>
@@ -565,22 +560,8 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
     </button>
 
-    <!-- JavaScript for Search Filtering & Interactivity -->
+    <!-- JavaScript for Interactivity -->
     <script>
-        function filterSections() {
-            const query = document.getElementById('policySearch').value.toLowerCase();
-            const sections = document.querySelectorAll('.policy-section');
-            
-            sections.forEach(section => {
-                const text = section.innerText.toLowerCase();
-                if (text.includes(query)) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
-        }
-
         function copyEmail() {
             const email = "m.payra859appsupport@gmail.com";
             const btnText = document.getElementById('copyBtnText');
