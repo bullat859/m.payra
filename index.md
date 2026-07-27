@@ -101,10 +101,10 @@
 
     <!-- COMPACT STICKY NAVBAR -->
     <div class="sticky top-0 z-40 w-full mb-6 sm:mb-8 pt-1 sm:pt-2 px-2 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div class="glass-panel px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 flex flex-row items-center justify-between gap-3 border border-slate-700/50 transition-all">
+        <div class="glass-panel px-3 sm:px-5 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 flex flex-row items-center justify-center gap-3 border border-slate-700/50 transition-all">
             
-            <!-- Left Side: App Logo & Name -->
-            <div class="flex items-center gap-2.5 sm:gap-3">
+            <!-- App Logo & Name -->
+            <div class="flex items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
                     <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -131,17 +131,9 @@
                         <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <!-- Full name always visible. Wraps on tiny screens to stay slim -->
-                <span class="text-[11px] sm:text-[15px] font-bold text-slate-100 leading-tight">
-                    Dynamic Edge<br class="block sm:hidden"> Gesture Control
-                </span>
-            </div>
-
-            <!-- Right Side: Document Type -->
-            <div class="flex items-center gap-3 shrink-0">
-                <div class="hidden sm:block w-px h-5 bg-slate-700"></div>
-                <span class="text-[10px] sm:text-sm font-extrabold tracking-wide uppercase bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent text-right">
-                    Privacy Policy
+                <!-- Full name centered and always in one line -->
+                <span class="text-[13px] sm:text-[15px] font-bold text-slate-100 truncate whitespace-nowrap">
+                    Dynamic Edge Gesture Control
                 </span>
             </div>
         </div>
