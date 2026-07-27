@@ -33,7 +33,6 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #030712;
-            /* Changed from hidden to clip to guarantee position:sticky works flawlessly on all mobile devices */
             overflow-x: clip; 
         }
         .glass-panel {
@@ -100,11 +99,9 @@
 
     <div class="glow-bg"></div>
 
-    <!-- COMPACT & WIDE STICKY NAVBAR -->
-    <div class="sticky top-0 z-40 w-full mb-6 sm:mb-8 pt-1 sm:pt-2 px-2 sm:px-4 lg:px-6 max-w-[98%] md:max-w-6xl xl:max-w-7xl mx-auto">
+    <!-- PRIMARY STICKY NAVBAR (App Logo & Name) -->
+    <div class="sticky top-0 z-40 w-full pt-1 sm:pt-2 px-2 sm:px-4 lg:px-6 max-w-[98%] md:max-w-6xl xl:max-w-7xl mx-auto">
         <div class="glass-panel px-3 sm:px-6 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/60 flex flex-row items-center justify-center gap-3 border border-slate-700/50 transition-all w-full">
-            
-            <!-- App Logo & Name -->
             <div class="flex items-center justify-center gap-2.5 sm:gap-3 w-full">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
                     <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +129,6 @@
                         <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <!-- Full name centered and always in one horizontal line -->
                 <span class="text-[13px] sm:text-[16px] font-bold text-slate-100 truncate whitespace-nowrap">
                     Dynamic Edge Gesture Control
                 </span>
@@ -140,11 +136,26 @@
         </div>
     </div>
 
+    <!-- SECONDARY STICKY NAVBAR (Quick Navigation Links) -->
+    <!-- Extended width and rounded pill backgrounds for links -->
+    <div class="sticky top-[52px] sm:top-[68px] z-30 w-full pt-2 sm:pt-3 px-2 sm:px-4 lg:px-6 max-w-[98%] md:max-w-6xl xl:max-w-7xl mx-auto transition-all">
+        <div class="glass-panel px-2 sm:px-4 py-2 sm:py-2.5 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 border border-slate-700/50 flex justify-center w-full">
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full justify-start sm:justify-center items-center px-1">
+                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
+                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
+                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
+                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
+                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
+                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative">
+    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative mt-6 sm:mt-10">
         
-        <!-- Big Hero Title (Non-Sticky, Scrolls away normally) -->
-        <div class="text-center mb-8 sm:mb-12 mt-2 sm:mt-6">
+        <!-- Big Hero Title -->
+        <div class="text-center mb-8 sm:mb-12">
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-4 leading-tight">
                 Privacy Policy
             </h1>
@@ -165,7 +176,7 @@
         </div>
 
         <!-- Quick Policy Highlights Grid -->
-        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
+        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-10 sm:mb-14">
             <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20">
                     🛡️
@@ -183,26 +194,12 @@
             </div>
         </section>
 
-        <!-- SECONDARY STICKY HEADER: Navigation Filter -->
-        <!-- Sticks directly underneath the main header when scrolling -->
-        <div class="sticky top-[58px] sm:top-[76px] z-30 pt-2 pb-3 mb-8 sm:mb-10 bg-[#030712]/90 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20 mx-[-12px] px-[12px] sm:mx-0 sm:px-4 sm:rounded-2xl transition-all">
-            <!-- Quick Links -->
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 pb-1 justify-start sm:justify-center">
-                <a href="#intro" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Intro</a>
-                <a href="#permissions" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Permissions</a>
-                <a href="#firebase" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/30 transition-colors">Firebase</a>
-                <a href="#admob" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">AdMob</a>
-                <a href="#security" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Security</a>
-                <a href="#contact" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700 text-xs text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30 transition-colors">Contact</a>
-            </div>
-        </div>
-
         <!-- Main Document Body -->
         <main class="space-y-6 sm:space-y-8">
 
             <!-- Section 1: Introduction -->
-            <!-- Adjusted padding to offset the sticky headers gracefully -->
-            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <!-- Adjusted padding to offset the double sticky headers gracefully -->
+            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">01</span>
@@ -222,7 +219,7 @@
             </section>
 
             <!-- Section 2: Android Permissions Required -->
-            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
@@ -381,7 +378,7 @@
             </section>
 
             <!-- Section 3: Firebase Services & Direct Links -->
-            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-amber-500/20">03</span>
@@ -448,7 +445,7 @@
             </section>
 
             <!-- Section 4: Google AdMob Privacy Policy & Links -->
-            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">04</span>
@@ -483,7 +480,7 @@
             </section>
 
             <!-- Section 5: Data Security & Retention -->
-            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">05</span>
@@ -503,7 +500,7 @@
             </section>
 
             <!-- Section 6: Children's Privacy -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">06</span>
@@ -515,7 +512,7 @@
             </section>
 
             <!-- Section 7: Contact & Support -->
-            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30 pt-20 sm:pt-24 mt-[-4rem] sm:mt-[-5rem]">
+            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30 pt-24 sm:pt-32 mt-[-5rem] sm:mt-[-7rem]">
                 <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
                 <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
                     <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">07</span>
