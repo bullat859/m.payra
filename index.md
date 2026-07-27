@@ -80,7 +80,7 @@
             background: #3b82f6;
         }
         
-        /* Hide scrollbar for quick links but allow scrolling */
+        /* Hide scrollbar for quick links */
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -88,69 +88,81 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        
-        /* Offset for smooth scrolling so headers don't cover content */
+
+        /* Offset scrolling so the combined sticky header doesn't cover content */
         .policy-section {
-            scroll-margin-top: 130px; 
+            scroll-margin-top: 140px; 
         }
         @media (min-width: 640px) {
             .policy-section {
-                scroll-margin-top: 150px;
+                scroll-margin-top: 155px;
             }
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased">
     
-    <!-- Reading Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 z-50 bg-slate-900">
+    <!-- Reading Progress Bar (Highest Z-index to sit on top of everything) -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[60] bg-slate-900">
         <div id="progressBar" class="h-full bg-gradient-to-r from-blue-400 via-indigo-500 to-amber-500 w-0 transition-all duration-150 ease-out"></div>
     </div>
 
     <div class="glow-bg"></div>
 
-    <!-- PRIMARY STICKY NAVBAR (App Logo & Name) -->
-    <div class="sticky top-0 z-40 w-full pt-1 sm:pt-2 px-2 sm:px-4 lg:px-6 max-w-[98%] md:max-w-6xl xl:max-w-7xl mx-auto mb-6 sm:mb-8">
-        <div class="glass-panel px-3 sm:px-6 py-2.5 sm:py-3 rounded-2xl sm:rounded-full shadow-lg shadow-black/60 flex flex-row items-center justify-center gap-3 border border-slate-700/50 transition-all w-full backdrop-blur-xl">
-            <div class="flex items-center justify-center gap-2.5 sm:gap-3 w-full">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4c1d95"/>
-                                <stop offset="50%" stop-color="#1e1b4b"/>
-                                <stop offset="100%" stop-color="#b45309"/>
-                            </linearGradient>
-                            <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#38bdf8"/>
-                                <stop offset="50%" stop-color="#a855f7"/>
-                                <stop offset="100%" stop-color="#f97316"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="100" height="100" fill="url(#bgGradHero)"/>
-                        <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
-                        <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
-                        <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
-                        <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
-                        <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
-                        <circle cx="50" cy="50" r="4" fill="#ffffff"/>
-                        <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <span class="text-[13px] sm:text-[16px] font-bold text-slate-100 truncate whitespace-nowrap">
-                    Dynamic Edge Gesture Control
-                </span>
+    <!-- COMBINED FULL-WIDTH STICKY HEADER -->
+    <div class="sticky top-0 z-50 w-full flex flex-col shadow-2xl shadow-black/60 bg-[#030712]/85 backdrop-blur-2xl border-b border-slate-800">
+        
+        <!-- Top Row: App Logo & Name -->
+        <div class="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2.5 sm:gap-3 border-b border-slate-800/60">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
+                <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4c1d95"/>
+                            <stop offset="50%" stop-color="#1e1b4b"/>
+                            <stop offset="100%" stop-color="#b45309"/>
+                        </linearGradient>
+                        <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8"/>
+                            <stop offset="50%" stop-color="#a855f7"/>
+                            <stop offset="100%" stop-color="#f97316"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" fill="url(#bgGradHero)"/>
+                    <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
+                    <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
+                    <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
+                    <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
+                    <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
+                    <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                    <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="text-[14px] sm:text-[16px] font-bold text-slate-100 truncate whitespace-nowrap">
+                Dynamic Edge Gesture Control
+            </span>
+        </div>
+
+        <!-- Bottom Row: Quick Navigation Links -->
+        <div class="w-full py-2.5 sm:py-3">
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full max-w-4xl mx-auto justify-start sm:justify-center items-center px-4">
+                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
+                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
+                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
+                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
+                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
+                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
             </div>
         </div>
     </div>
 
     <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative">
+    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 pt-6 sm:pt-10">
         
         <!-- Big Hero Title -->
-        <div class="text-center mb-8 sm:mb-12 mt-2 sm:mt-6">
+        <div class="text-center mb-8 sm:mb-12">
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-4 leading-tight">
                 Privacy Policy
             </h1>
@@ -171,7 +183,7 @@
         </div>
 
         <!-- Quick Policy Highlights Grid -->
-        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
+        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-10 sm:mb-14">
             <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20">
                     🛡️
@@ -188,21 +200,6 @@
                 <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting, while Google AdMob serves optional rewarded ad features.</p>
             </div>
         </section>
-
-        <!-- SECONDARY STICKY NAVBAR (Quick Navigation Links) -->
-        <!-- Sits normally in the page, but sticks to the bottom of the main header when scrolling -->
-        <div class="sticky top-[60px] sm:top-[76px] z-30 mb-8 sm:mb-10 transition-all">
-            <div class="glass-panel px-2 sm:px-4 py-2 sm:py-2.5 rounded-2xl sm:rounded-full shadow-lg shadow-black/40 border border-slate-700/50 flex justify-center w-full backdrop-blur-xl">
-                <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full justify-start sm:justify-center items-center px-1">
-                    <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
-                    <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
-                    <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
-                    <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
-                    <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
-                    <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
-                </div>
-            </div>
-        </div>
 
         <!-- Main Document Body -->
         <main class="space-y-6 sm:space-y-8">
@@ -547,7 +544,6 @@
         <!-- Footer -->
         <footer class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 text-slate-500 text-xs sm:text-sm flex flex-col items-center gap-3">
             
-            <!-- Last Updated Badge Moved to Footer -->
             <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400 mb-2">
                 <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 <span>Last Updated: July 27, 2026</span>
