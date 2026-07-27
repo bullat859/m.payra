@@ -89,31 +89,29 @@
             scrollbar-width: none;
         }
 
-        /* Offset scrolling so the combined sticky header doesn't cover content */
+        /* Offset scrolling so the combined sticky headers don't cover content */
         .policy-section {
-            scroll-margin-top: 140px; 
+            scroll-margin-top: 130px; 
         }
         @media (min-width: 640px) {
             .policy-section {
-                scroll-margin-top: 155px;
+                scroll-margin-top: 145px;
             }
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased">
     
-    <!-- Reading Progress Bar (Highest Z-index to sit on top of everything) -->
+    <!-- Reading Progress Bar -->
     <div class="fixed top-0 left-0 w-full h-1 z-[60] bg-slate-900">
         <div id="progressBar" class="h-full bg-gradient-to-r from-blue-400 via-indigo-500 to-amber-500 w-0 transition-all duration-150 ease-out"></div>
     </div>
 
     <div class="glow-bg"></div>
 
-    <!-- COMBINED FULL-WIDTH STICKY HEADER -->
-    <div class="sticky top-0 z-50 w-full flex flex-col shadow-2xl shadow-black/60 bg-[#030712]/85 backdrop-blur-2xl border-b border-slate-800">
-        
-        <!-- Top Row: App Logo & Name -->
-        <div class="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2.5 sm:gap-3 border-b border-slate-800/60">
+    <!-- MAIN STICKY HEADER (Left Aligned App Logo & Name) -->
+    <div class="sticky top-0 z-50 w-full bg-[#030712]/95 backdrop-blur-xl border-b border-slate-800 shadow-lg shadow-black/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-start gap-3 w-full">
             <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
                 <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -140,26 +138,14 @@
                     <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </div>
-            <span class="text-[14px] sm:text-[16px] font-bold text-slate-100 truncate whitespace-nowrap">
+            <span class="text-[14px] sm:text-[16px] font-bold text-slate-100 truncate">
                 Dynamic Edge Gesture Control
             </span>
-        </div>
-
-        <!-- Bottom Row: Quick Navigation Links -->
-        <div class="w-full py-2.5 sm:py-3">
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full max-w-4xl mx-auto justify-start sm:justify-center items-center px-4">
-                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
-                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
-                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
-                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
-                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
-                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
-            </div>
         </div>
     </div>
 
     <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 pb-8 sm:pb-16 pt-6 sm:pt-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative pt-8 sm:pt-12">
         
         <!-- Big Hero Title -->
         <div class="text-center mb-8 sm:mb-12">
@@ -183,7 +169,7 @@
         </div>
 
         <!-- Quick Policy Highlights Grid -->
-        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-10 sm:mb-14">
+        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
             <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20">
                     🛡️
@@ -200,6 +186,18 @@
                 <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting, while Google AdMob serves optional rewarded ad features.</p>
             </div>
         </section>
+
+        <!-- SECONDARY STICKY NAVBAR (Quick Navigation Links - Back in original place!) -->
+        <div class="sticky top-[52px] sm:top-[64px] z-40 mb-8 sm:mb-10 py-2 sm:py-3 bg-[#030712]/95 backdrop-blur-xl border-b border-t border-slate-800/50 mx-[-16px] px-[16px] sm:mx-0 sm:px-4 sm:rounded-2xl shadow-lg shadow-black/30 transition-all">
+            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full justify-start sm:justify-center items-center">
+                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
+                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
+                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
+                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
+                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
+                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
+            </div>
+        </div>
 
         <!-- Main Document Body -->
         <main class="space-y-6 sm:space-y-8">
