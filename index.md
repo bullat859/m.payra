@@ -3,618 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Android Dev Portfolio</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
+  <title>AI-Powered Android Apps</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* RESET & BASE STYLES */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    :root {
-      --bg-dark: #0a0c0e;
-      --bg-card: #121518;
-      --bg-input: #1a1e23;
-      --border-color: #22272e;
-      --text-main: #e6edf3;
-      --text-muted: #8b949e;
-      --accent-green: #2ecc71;
-      --accent-green-hover: #27ae60;
-      --accent-green-glow: rgba(46, 204, 113, 0.15);
-    }
-
+    /* Custom dark gradient background and glow effects */
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 60px;
+      background-color: #080e14;
+      color: #e2e8f0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
     }
-
-    /* CONTAINER */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* HEADER & NAV */
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      color: var(--accent-green);
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a.active, .nav-links a:hover {
-      color: var(--accent-green);
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      padding: 80px 0 100px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(46, 204, 113, 0.1);
-      border: 1px solid rgba(46, 204, 113, 0.2);
-      color: var(--accent-green);
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero-title span {
-      color: var(--accent-green);
-    }
-
-    .hero-desc {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 32px;
-      max-width: 480px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s;
-    }
-
-    .btn-primary {
-      background-color: var(--accent-green);
-      color: #000;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-green-hover);
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--text-muted);
-    }
-
-    .hero-image-wrapper {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 380px;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 0 50px var(--accent-green-glow);
-      object-fit: cover;
-    }
-
-    /* SECTION GENERAL */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 32px;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      color: var(--accent-green);
-      font-weight: 700;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      margin-top: 4px;
-    }
-
-    /* FEATURED WORK */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-bottom: 100px;
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      padding: 20px;
-    }
-
-    .project-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      background-color: #1a1a1a;
-      margin-bottom: 16px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .tag {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 4px;
-      color: var(--text-muted);
-    }
-
-    .project-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 16px;
-      font-size: 0.8rem;
-    }
-
-    .project-links a {
-      color: var(--accent-green);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* CONTACT SECTION */
-    .contact-section {
-      margin-bottom: 80px;
-    }
-
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
-    }
-
-    .contact-info h2 {
-      font-size: 2rem;
-      color: var(--accent-green);
-      margin-bottom: 16px;
-    }
-
-    .contact-info p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-      max-width: 400px;
-    }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 32px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .icon-wrapper {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-green);
-    }
-
-    .contact-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .contact-value {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-    }
-
-    .social-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-    }
-
-    .contact-form {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 32px;
-      border-radius: 12px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      background: var(--bg-input);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent-green);
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--accent-green);
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 32px;
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-desc {
-        margin: 0 auto 32px;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
+    .card-bg {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between selection:bg-teal-500 selection:text-black">
 
-  <!-- HEADER / NAVIGATION -->
-  <header>
-    <div class="container nav-container">
-      <a href="#" class="logo">Android Dev Portfolio</a>
-      <ul class="nav-links">
-        <li><a href="#projects" class="active">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button class="theme-toggle" aria-label="Toggle theme">
-            <i data-lucide="moon" size="18"></i>
-          </button>
-        </li>
-      </ul>
+  <!-- Glow Background Accents -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="fixed top-1/3 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Header / Navigation -->
+  <header class="container mx-auto px-6 py-6 flex items-center justify-between relative z-10">
+    <div class="text-sm font-semibold tracking-wide">
+      <span class="text-gray-300">AI-Powered Android Apps</span><br>
+      <span class="text-gray-500 font-normal">by <span class="text-teal-400">[Developer Name]</span></span>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-8 text-sm text-gray-300">
+      <a href="#" class="hover:text-teal-400 transition">Home</a>
+      <a href="#" class="hover:text-teal-400 transition">Solutions</a>
+      <a href="#" class="hover:text-teal-400 transition">Blogs</a>
+      <a href="#" class="hover:text-teal-400 transition">Services</a>
+      <a href="#" class="hover:text-teal-400 transition">Contact</a>
+    </nav>
+
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-sm text-gray-300 hover:text-white transition">Log in</a>
+      <a href="#" class="bg-teal-500 hover:bg-teal-400 text-slate-950 px-5 py-2.5 rounded-full font-medium text-sm transition shadow-lg shadow-teal-500/20">
+        Start your Project
+      </a>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
+  <!-- Hero Section -->
+  <main class="container mx-auto px-6 py-10 relative z-10 flex-grow">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-8">
+      
+      <!-- Hero Left: Visual Graphic Placeholder -->
+      <div class="lg:col-span-6 relative flex justify-center">
+        <div class="relative w-full max-w-md aspect-square rounded-3xl card-bg p-6 flex flex-col items-center justify-center border border-teal-500/20 glow-cyan">
+          <!-- Animated / Styled Graphic Placeholder -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-teal-500/10 rounded-3xl"></div>
+          <div class="relative z-10 text-center">
+            <div class="w-48 h-80 mx-auto bg-slate-900 border-4 border-slate-700 rounded-[2.5rem] p-4 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+              <div class="w-16 h-4 bg-slate-800 rounded-full mx-auto"></div>
+              <div class="my-auto">
+                <i class="fa-solid fa-brain text-4xl text-teal-400 mb-2"></i>
+                <div class="text-xs font-bold tracking-widest text-teal-300">NEXUS AI</div>
+                <div class="w-full h-12 bg-slate-800/80 rounded-lg mt-3 p-1 flex items-end gap-1 justify-center">
+                  <div class="w-2 h-4 bg-teal-400 rounded-sm"></div>
+                  <div class="w-2 h-8 bg-cyan-400 rounded-sm"></div>
+                  <div class="w-2 h-6 bg-teal-500 rounded-sm"></div>
+                </div>
+              </div>
+              <div class="w-full h-8 bg-slate-800 rounded-lg"></div>
+            </div>
+          </div>
+          <!-- Tech Tags -->
+          <div class="absolute top-4 left-4 bg-slate-900/90 border border-slate-700 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+            <i class="fa-brands fa-python text-yellow-400"></i> Python
+          </div>
+          <div class="absolute bottom-6 left-6 bg-slate-900/90 border border-slate-700 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+            <i class="fa-solid fa-code text-purple-400"></i> Kotlin
+          </div>
+          <div class="absolute bottom-12 right-4 bg-slate-900/90 border border-slate-700 text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+            <i class="fa-solid fa-cubes text-orange-400"></i> TensorFlow
+          </div>
+        </div>
+      </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-content">
-        <span class="badge">● Android Specialist</span>
-        <h1 class="hero-title">Hi, I'm an <span>Android Developer</span></h1>
-        <p class="hero-desc">
-          I build high-quality Android apps with a focus on clean code and user experience. I'm passionate about creating intuitive mobile solutions that solve real-world problems.
+      <!-- Hero Right: Content -->
+      <div class="lg:col-span-6 space-y-6">
+        <span class="text-teal-400 text-xs font-bold tracking-widest uppercase">
+          ELEVATE YOUR ANDROID APPS WITH INTELLIGENCE
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+          Custom AI Solutions for Android | Smart, Efficient, Powerful Mobile Applications.
+        </h1>
+        <p class="text-gray-400 text-base max-w-xl leading-relaxed">
+          Expert Android Developer Specializing in Integrating Advanced AI & Machine Learning models into high-performance mobile applications.
         </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">
-            View Projects <i data-lucide="arrow-right" size="16"></i>
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#" class="px-6 py-3 rounded-full border border-slate-700 hover:border-teal-400 text-white font-medium text-sm transition">
+            View Portfolio
           </a>
-          <a href="#contact" class="btn btn-secondary">Let's talk</a>
+          <a href="#" class="px-6 py-3 rounded-full bg-teal-400 hover:bg-teal-300 text-slate-950 font-semibold text-sm transition shadow-lg shadow-teal-500/20">
+            Start your Project
+          </a>
         </div>
-      </div>
-      <div class="hero-image-wrapper">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Profile" class="hero-image">
-      </div>
-    </section>
-
-    <!-- FEATURED WORK SECTION -->
-    <section id="projects">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Featured Work</h2>
-          <p class="section-desc">A curated selection of applications focusing on clean code, material design 3, and seamless user experiences.</p>
-        </div>
-        <span style="color: var(--text-muted); font-size: 0.8rem;">03 / PROJECTS</span>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1616469829941-c7200edec809?auto=format&fit=crop&q=80&w=500" alt="Project 1" class="project-img">
-          <div class="tags">
-            <span class="tag">KOTLIN</span>
-            <span class="tag">JETPACK COMPOSE</span>
-          </div>
-          <h3 class="project-title">Project Title</h3>
-          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
-          <div class="project-links">
-            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
-            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500" alt="Project 2" class="project-img">
-          <div class="tags">
-            <span class="tag">ROOM</span>
-            <span class="tag">HILT</span>
-          </div>
-          <h3 class="project-title">Project Title</h3>
-          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
-          <div class="project-links">
-            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
-            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=500" alt="Project 3" class="project-img">
-          <div class="tags">
-            <span class="tag">FIREBASE</span>
-            <span class="tag">SDK</span>
-          </div>
-          <h3 class="project-title">Project Title</h3>
-          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
-          <div class="project-links">
-            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
-            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <div class="contact-info">
-          <h2>Let's build something epic.</h2>
-          <p>I build high-quality Android apps with a focus on clean code and user experience. I'm passionate about creating intuitive mobile solutions that solve real-world problems.</p>
-          
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="icon-wrapper"><i data-lucide="mail" size="18"></i></div>
-              <div>
-                <div class="contact-label">EMAIL</div>
-                <div class="contact-value">hello@androiddev.pro</div>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="icon-wrapper"><i data-lucide="map-pin" size="18"></i></div>
-              <div>
-                <div class="contact-label">LOCATION</div>
-                <div class="contact-value">San Francisco, CA (Remote Friendly)</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="#" class="social-icon"><i data-lucide="github" size="18"></i></a>
-            <a href="#" class="social-icon"><i data-lucide="linkedin" size="18"></i></a>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <form class="contact-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="name">FULL NAME</label>
-            <input type="text" id="name" placeholder="John Doe">
-          </div>
-          
-          <div class="form-group">
-            <label for="email">EMAIL ADDRESS</label>
-            <input type="email" id="email" placeholder="john@example.com">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">YOUR MESSAGE</label>
-            <textarea id="message" rows="4" placeholder="Tell me about your project..."></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">
-            Send Message <i data-lucide="send" size="16"></i>
-          </button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-container">
-      <div>
-        <span style="color: var(--accent-green); font-weight: 600;">Android Dev Portfolio</span>
-        <p style="margin-top: 4px; font-size: 0.75rem;">© 2026 Android Dev Portfolio. Built with precision.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">CodePen</a>
       </div>
     </div>
-  </footer>
 
-  <!-- Initialize Lucide Icons -->
-  <script>
-    lucide.createIcons();
-  </script>
+    <!-- Bottom Section: Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-12">
+      
+      <!-- Expertise List -->
+      <div class="md:col-span-4 card-bg p-6 rounded-2xl">
+        <h3 class="text-lg font-semibold text-white mb-4">My Expertise</h3>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> AI Chatbot Integration
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> Smart Image Editor
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> Predictive Text & Search
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> Voice Recognition AI
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> Custom ML Pipeline
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> AI Optimization
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-regular fa-circle-check text-teal-400"></i> On-Device AI Services
+          </li>
+        </ul>
+      </div>
+
+      <!-- Featured Projects -->
+      <div class="md:col-span-5 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg font-semibold text-white mb-4">Featured Projects</h3>
+          <div class="grid grid-cols-3 gap-3">
+            <!-- Card 1 -->
+            <div class="card-bg p-3 rounded-xl flex flex-col items-center text-center hover:border-teal-500/40 transition">
+              <div class="w-full h-20 bg-slate-800 rounded-lg mb-2 flex items-center justify-center text-teal-400">
+                <i class="fa-solid fa-robot text-2xl"></i>
+              </div>
+              <span class="text-xs font-medium text-white">AI Chatbot</span>
+              <span class="text-[10px] text-gray-400">Android App</span>
+            </div>
+            <!-- Card 2 -->
+            <div class="card-bg p-3 rounded-xl flex flex-col items-center text-center hover:border-teal-500/40 transition">
+              <div class="w-full h-20 bg-slate-800 rounded-lg mb-2 flex items-center justify-center text-cyan-400">
+                <i class="fa-solid fa-image text-2xl"></i>
+              </div>
+              <span class="text-xs font-medium text-white">Smart Image</span>
+              <span class="text-[10px] text-gray-400">Editor App</span>
+            </div>
+            <!-- Card 3 -->
+            <div class="card-bg p-3 rounded-xl flex flex-col items-center text-center hover:border-teal-500/40 transition">
+              <div class="w-full h-20 bg-slate-800 rounded-lg mb-2 flex items-center justify-center text-indigo-400">
+                <i class="fa-solid fa-microchip text-2xl"></i>
+              </div>
+              <span class="text-xs font-medium text-white">Prediction</span>
+              <span class="text-[10px] text-gray-400">AI Engine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials / About Me -->
+      <div class="md:col-span-3 card-bg p-5 rounded-2xl flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-semibold text-gray-400">Client Testimonials</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+        </div>
+        
+        <div class="bg-slate-800/80 rounded-xl overflow-hidden mb-3">
+          <!-- Placeholder Profile Image -->
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="About Me" class="w-full h-28 object-cover">
+        </div>
+
+        <div>
+          <h4 class="text-sm font-semibold text-white">About Me</h4>
+          <p class="text-xs text-gray-400 mt-1 leading-relaxed">
+            Providing tailored and modern solutions in Smart Mobile & AI-driven applications.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
 </body>
 </html>
