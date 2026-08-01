@@ -94,79 +94,6 @@
             scroll-margin-top: 130px; 
         }
         @media (min-width: 640px) {
-            .policy-section {
-                scroll-margin-top: 145px;
-            }
-        }
-    </style>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-blue-500 selection:text-white relative antialiased">
-    
-    <!-- Reading Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 z-[60] bg-slate-900">
-        <div id="progressBar" class="h-full bg-gradient-to-r from-blue-400 via-indigo-500 to-amber-500 w-0 transition-all duration-150 ease-out"></div>
-    </div>
-
-    <div class="glow-bg"></div>
-
-    <!-- MAIN STICKY HEADER (Left Aligned App Logo & Name) -->
-    <div class="sticky top-0 z-50 w-full bg-[#030712]/95 backdrop-blur-xl border-b border-slate-800 shadow-lg shadow-black/40">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-start gap-3 w-full">
-            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden shadow-sm shadow-blue-500/20 shrink-0 border border-white/10">
-                <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bgGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#4c1d95"/>
-                            <stop offset="50%" stop-color="#1e1b4b"/>
-                            <stop offset="100%" stop-color="#b45309"/>
-                        </linearGradient>
-                        <linearGradient id="neonGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#38bdf8"/>
-                            <stop offset="50%" stop-color="#a855f7"/>
-                            <stop offset="100%" stop-color="#f97316"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="100" height="100" fill="url(#bgGradHero)"/>
-                    <path d="M 20 22 C 20 18 24 14 28 14 L 38 14 C 40 14 42 16 43 18 L 45 22 C 46 24 48 25 50 25 C 52 25 54 24 55 22 L 57 18 C 58 16 60 14 62 14 L 72 14 C 76 14 80 18 80 22 L 80 78 C 80 82 76 86 72 86 L 28 86 C 24 86 20 82 20 78 Z" fill="none" stroke="url(#neonGradHero)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="47" cy="18" r="2" fill="#38bdf8"/>
-                    <circle cx="53" cy="18" r="1.5" fill="#a855f7"/>
-                    <path d="M 28 42 C 28 68 45 74 52 56 C 54 50 50 42 45 42 C 40 42 38 48 42 54" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M 62 30 A 28 28 0 0 1 78 44 L 70 47 A 18 18 0 0 0 59 37 Z" fill="#f97316" opacity="0.9"/>
-                    <path d="M 79 47 A 28 28 0 0 1 79 63 L 71 60 A 18 18 0 0 0 71 50 Z" fill="#fb923c" opacity="0.9"/>
-                    <path d="M 77 66 A 28 28 0 0 1 63 78 L 58 70 A 18 18 0 0 0 68 61 Z" fill="#ef4444" opacity="0.9"/>
-                    <circle cx="50" cy="50" r="4" fill="#ffffff"/>
-                    <path d="M 50 43 L 50 57 M 43 50 L 57 50 M 45 45 L 55 55 M 45 55 L 55 45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <span class="text-[14px] sm:text-[16px] font-bold text-slate-100 truncate">
-                Dynamic Edge Gesture Control
-            </span>
-        </div>
-    </div>
-
-    <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-16 relative pt-8 sm:pt-12">
-        
-        <!-- Big Hero Title -->
-        <div class="text-center mb-8 sm:mb-12">
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent mb-4 leading-tight">
-                Privacy Policy
-            </h1>
-            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-6">
-                Complete transparency regarding how we handle your data, permissions, and local features.
-            </p>
-
-            <!-- Google Play Store Button -->
-            <div class="flex justify-center">
-                <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-blue-500/50 text-slate-200 text-xs sm:text-sm font-semibold transition-all hover:bg-slate-800 shadow-md transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L18.81,13.12C19.86,12.55 19.86,11.45 18.81,10.88L16.81,8.88L14.81,10.88L14.81,13.12L16.81,15.12M13.69,12L15.39,8.81L13.69,12M13.69,12L15.39,15.19L3.84,21.85L13.69,12Z"/>
-                    </svg>
-                    <span>Get it on Google Play</span>
-                    <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
-            </div>
-        </div>
 
         <!-- Quick Policy Highlights Grid -->
         <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
@@ -349,70 +276,14 @@
                             Microphone (Silent Audio & Video)
                         </h3>
                         <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Requested strictly on-demand when mapping gestures to record Audio Memos or capturing video with sound. The microphone is only activated when explicitly triggered by your gesture.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            Similar to the camera functionality, all audio recordings are <strong>saved entirely on your device's local storage</strong>. We never collect or monitor your voice or background audio.
-                        </div>
-                    </div>
-
-                    <!-- Nearby Devices (Bluetooth) -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📶</span>
-                            Nearby Devices (Bluetooth)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to toggle your device's Bluetooth connection state and search for or connect to nearby devices.
-                        </p>
-                    </div>
-
-                    <!-- Contacts & Phone -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📞</span>
-                            Contacts & Phone
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested strictly on-demand when mapping gestures to initiate Direct Calling. We do not store, upload, or share your contact list data.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 3: Firebase Services & Direct Links -->
-            <section id="firebase" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-amber-500 to-orange-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-amber-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-amber-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-amber-500/20">03</span>
+                             border-amber-500/20">03</span>
                     Firebase Integration
                 </h2>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
                     Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring and performance tracking.
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-6">
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span>📈</span> Firebase Analytics
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Collects telemetry data such as app launch frequency, screen views, and feature usage to help us optimize the user interface and app performance.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span>🛠️</span> Firebase Crashlytics
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Automatically captures and transmits stack traces and device state during application crashes to allow us to issue rapid software bug fixes.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
+                <div class="grid gridhext-amber-300 text-xs sm:text-sm font-semibold">
                             <span>⚡</span> Performance Monitoring
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
