@@ -1,482 +1,717 @@
-<html lang="en" class="dark scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Privacy Policy - Dynamic Edge Gesture Control</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030712;
-            overflow-x: clip; 
-        }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.35);
-            background: rgba(30, 41, 59, 0.65);
-            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
-        }
-        .glow-bg {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 1) 100%);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #030712;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-        
-        /* Hide scrollbar for quick links */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Dev Portfolio</title>
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* RESET & BASE STYLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-        /* Offset scrolling so the combined sticky headers don't cover content */
-        .policy-section {
-            scroll-margin-top: 130px; 
-        }
-        @media (min-width: 640px) {
+    :root {
+      --bg-dark: #0a0c0e;
+      --bg-card: #121518;
+      --bg-input: #1a1e23;
+      --border-color: #22272e;
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+      --accent-green: #2ecc71;
+      --accent-green-hover: #27ae60;
+      --accent-green-glow: rgba(46, 204, 113, 0.15);
+    }
 
-        <!-- Quick Policy Highlights Grid -->
-        <section id="overview" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-8 sm:mb-10">
-            <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-blue-500/20">
-                    🛡️
-                </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Analytics vs. Personal Data</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">We collect essential usage and crash analytics to improve our app. However, your personal photos, videos, audio recordings, and custom notes are stored locally and are never uploaded to our servers.</p>
-            </div>
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
 
-            <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg sm:text-xl mb-2.5 sm:mb-3 border border-amber-500/20">
-                    🔥
-                </div>
-                <h3 class="text-sm sm:text-base font-semibold text-slate-100 mb-1">Firebase & AdMob Integration</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Firebase securely handles our diagnostic crash reporting, while Google AdMob serves optional rewarded ad features.</p>
-            </div>
-        </section>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        <!-- SECONDARY STICKY NAVBAR (Quick Navigation Links) -->
-        <div class="sticky top-[52px] sm:top-[64px] z-40 mb-8 sm:mb-10 py-2 sm:py-3 bg-[#030712]/95 backdrop-blur-xl border-b border-t border-slate-800/50 mx-[-16px] px-[16px] sm:mx-0 sm:px-4 sm:rounded-2xl shadow-lg shadow-black/30 transition-all">
-            <div class="flex overflow-x-auto hide-scrollbar gap-2 sm:gap-3 w-full justify-start sm:justify-center items-center">
-                <a href="#intro" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Intro</a>
-                <a href="#permissions" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Permissions</a>
-                <a href="#firebase" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-amber-500/20 hover:text-amber-300 hover:border-amber-500/40 transition-all">Firebase</a>
-                <a href="#admob" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">AdMob</a>
-                <a href="#security" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Security</a>
-                <a href="#contact" class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-600/50 text-xs sm:text-sm font-medium text-slate-300 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/40 transition-all">Contact</a>
-            </div>
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER & NAV */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--accent-green);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--accent-green);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 0 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(46, 204, 113, 0.1);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+      color: var(--accent-green);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--accent-green);
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-green);
+      color: #000;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-green-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 50px var(--accent-green-glow);
+      object-fit: cover;
+    }
+
+    /* SECTION GENERAL */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 4px;
+    }
+
+    .section-link {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* FEATURED WORK */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.8rem;
+    }
+
+    .project-links a {
+      color: var(--accent-green);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* TECHNICAL INSIGHTS */
+    .blog-section {
+      margin-bottom: 80px;
+    }
+
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .blog-icon-box {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-green);
+      flex-shrink: 0;
+    }
+
+    .blog-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .blog-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .blog-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+      margin-bottom: 80px;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 2rem;
+      color: var(--accent-green);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-green);
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .contact-value {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 32px;
+      border-radius: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-green);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent-green);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 32px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-desc {
+        margin: 0 auto 32px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Android Dev Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#projects" class="active">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="moon" size="18"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">● Android Specialist</span>
+        <h1 class="hero-title">Hi, I'm an <span>Android Developer</span></h1>
+        <p class="hero-desc">
+          I build high-quality Android apps with a focus on clean code and user experience. I'm passionate about creating intuitive mobile solutions that solve real-world problems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            View Projects <i data-lucide="arrow-right" size="16"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">Let's talk</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Profile" class="hero-image">
+      </div>
+    </section>
+
+    <!-- FEATURED WORK SECTION -->
+    <section id="projects">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-desc">A curated selection of applications focusing on clean code, material design 3, and seamless user experiences.</p>
+        </div>
+        <span style="color: var(--text-muted); font-size: 0.8rem;">03 / PROJECTS</span>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1616469829941-c7200edec809?auto=format&fit=crop&q=80&w=500" alt="Project 1" class="project-img">
+          <div class="tags">
+            <span class="tag">KOTLIN</span>
+            <span class="tag">JETPACK COMPOSE</span>
+          </div>
+          <h3 class="project-title">Project Title</h3>
+          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
+          <div class="project-links">
+            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
+            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
+          </div>
         </div>
 
-        <!-- Main Document Body -->
-        <main class="space-y-6 sm:space-y-8">
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500" alt="Project 2" class="project-img">
+          <div class="tags">
+            <span class="tag">ROOM</span>
+            <span class="tag">HILT</span>
+          </div>
+          <h3 class="project-title">Project Title</h3>
+          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
+          <div class="project-links">
+            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
+            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
+          </div>
+        </div>
 
-            <!-- Section 1: Introduction -->
-            <section id="intro" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">01</span>
-                    Introduction & Architecture
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    <p>
-                        Welcome to <strong>Dynamic Edge Gesture Control</strong>. We value your trust and are committed to complete transparency regarding our data processing practices.
-                    </p>
-                    <p>
-                        Our application provides deep system customization and gesture automation. While primary gesture detection, touch listening, and screen overlays function offline directly on your device, our app does connect to secure cloud services (specifically Google Firebase). We use these services to collect essential usage telemetry, diagnose software crashes, and monitor app performance. We also use Google AdMob to serve rewarded video ads.
-                    </p>
-                    <p class="text-xs sm:text-sm bg-slate-900/80 border border-slate-800 p-3.5 sm:p-4 rounded-xl text-slate-400">
-                        By installing, accessing, or using Dynamic Edge Gesture Control, you acknowledge and agree to the data collection and usage practices described in this Privacy Policy.
-                    </p>
-                </div>
-            </section>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=500" alt="Project 3" class="project-img">
+          <div class="tags">
+            <span class="tag">FIREBASE</span>
+            <span class="tag">XMPP</span>
+          </div>
+          <h3 class="project-title">Project Title</h3>
+          <p class="project-desc">Detailed description of your app's features and your role in the...</p>
+          <div class="project-links">
+            <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
+            <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- Section 2: Android Permissions Required -->
-            <section id="permissions" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">02</span>
-                    Android Permissions & Local Features
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
-                    To deliver system-wide gesture controls, our app requests explicit permissions on your Android device. Each permission is used strictly for local automation and the features you trigger:
-                </p>
-                
-                <div class="space-y-4 sm:space-y-6">
-                    <!-- Accessibility Service -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <div class="flex items-center justify-between mb-2.5 sm:mb-3 flex-wrap gap-2">
-                            <h3 class="text-base sm:text-xl font-semibold text-blue-300 flex items-center gap-2">
-                                <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🛠️</span>
-                                Accessibility Service API
-                            </h3>
-                            <span class="text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 font-semibold">Core Required Permission</span>
-                        </div>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            The Accessibility Service API is the foundational engine of Dynamic Edge Gesture Control. It is strictly utilized to:
-                        </p>
-                        <ul class="space-y-2 my-3 text-slate-300 text-xs sm:text-sm list-none pl-0">
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Draw touch-sensitive gesture overlay handles (edge sliders, notches, dynamic islands, and pie menus) on top of active screens.</li>
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Detect your swipe, tap, long-press, and drag gestures specifically within these configured edge handle zones.</li>
-                            <li class="relative pl-5 before:absolute before:left-0 before:text-blue-400 before:content-['✦']">Execute global Android system actions assigned to your gestures (e.g., Back, Home, Recent Apps, Quick Settings, Split Screen, and Power Menu).</li>
-                        </ul>
-                        <div class="bg-red-500/10 border-l-2 sm:border-l-4 border-red-500 p-3 sm:p-4 rounded-r-xl mt-3 text-red-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-red-400 block mb-1">Strict Accessibility Privacy Guarantee:</strong>
-                            We do NOT use the Accessibility Service API to read screen content, inspect keystrokes, intercept passwords, log personal messages, or track your interactions within other third-party apps.
-                        </div>
-                    </div>
+    <!-- TECHNICAL INSIGHTS SECTION -->
+    <section id="blog" class="blog-section">
+      <div class="section-header">
+        <h2 class="section-title">Technical Insights</h2>
+        <a href="#" class="section-link">READ ALL POSTS <i data-lucide="arrow-up-right" size="14"></i></a>
+      </div>
 
-                    <!-- Notifications -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🔔</span>
-                            Notifications
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Requested to run essential background foreground services. This ensures that the gesture engine continues to run reliably in the background without being killed by the Android system. It is also used to display media controls or quick settings directly in your notification panel.
-                        </p>
-                    </div>
+      <div class="blog-list">
+        <!-- Post 1 -->
+        <div class="blog-card">
+          <div class="blog-icon-box">
+            <i data-lucide="zap" size="24"></i>
+          </div>
+          <div>
+            <div class="blog-meta">MARCH 28, 2024 • 8 MIN READ</div>
+            <h3 class="blog-title">Optimizing Jetpack Compose Performance</h3>
+            <p class="blog-desc">Deep dive into Recomposition, Subcomposition, and how to use the Layout Inspector to find bottlenecks in your Compose UI.</p>
+          </div>
+        </div>
 
-                    <!-- Location -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📍</span>
-                            Location Access
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Used exclusively for <strong>Situational Location Triggers</strong>. If you opt to set up geofenced gestures, background location monitors when you enter or exit your chosen boundary. Coordinates are never sold or uploaded.
-                        </p>
-                    </div>
-                    
-                    <!-- Usage Access -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📊</span>
-                            Usage Access (Package Usage Stats)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Allows the app to identify which foreground application is currently active. This enables "App-Specific Gesture Profiles," automatically hiding or switching gestures for specific apps.
-                        </p>
-                    </div>
+        <!-- Post 2 -->
+        <div class="blog-card">
+          <div class="blog-icon-box">
+            <i data-lucide="cpu" size="24"></i>
+          </div>
+          <div>
+            <div class="blog-meta">FEBRUARY 12, 2024 • 12 MIN READ</div>
+            <h3 class="blog-title">Mastering Kotlin Coroutines: Beyond the Basics</h3>
+            <p class="blog-desc">Exploring advanced Flow operators, Custom Dispatchers, and Structured Concurrency patterns for robust asynchronous code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    <!-- Modify System Settings -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">⚙️</span>
-                            Modify System Settings
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Empowers your gestures to directly toggle hardware and system parameters—such as Screen Brightness, Auto-Rotate lock, Volume levels, and Screen Timeout.
-                        </p>
-                    </div>
-
-                    <!-- Storage, Music & Audio Access -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🎵</span>
-                            Music & Audio / Storage Access
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed">
-                            Required for local features such as the <strong>Offline Music Controller</strong>, playing media audio files, importing custom icons, and saving/restoring gesture backups.
-                        </p>
-                    </div>
-
-                    <!-- Notes Feature -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📝</span>
-                            In-App Notes Feature
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Our application includes a local feature allowing you to create and save custom text notes for quick reference or task management.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            Any text, notes, or personal information you type into the notes feature are <strong>stored strictly offline on your device</strong>. We do not read, collect, or transmit your note data to any external cloud server.
-                        </div>
-                    </div>
-
-                    <!-- Camera (Silent Photo & Silent Video) -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">📸</span>
-                            Camera (Silent Photo & Silent Video)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                            Requested strictly on-demand when mapping gestures to toggle the device flashlight, or to utilize the app's <strong>silent photo and video recording</strong> functions.
-                        </p>
-                        <div class="bg-emerald-500/10 border-l-2 sm:border-l-4 border-emerald-500 p-3 sm:p-4 rounded-r-xl mt-3 text-emerald-200 text-xs sm:text-sm leading-relaxed">
-                            <strong class="font-bold text-emerald-400 block mb-1">Total Privacy Guarantee:</strong>
-                            All photos and videos captured using the silent recording feature are saved <strong>exclusively to your local device storage</strong>. We do not collect, upload, or transmit your personal media files to any cloud server.
-                        </div>
-                    </div>
-
-                    <!-- Microphone (Audio Memos) -->
-                    <div class="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                        <h3 class="text-base sm:text-xl font-semibold text-blue-300 mb-2 sm:mb-3 flex items-center gap-2">
-                            <span class="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm sm:text-base">🎙️</span>
-                            Microphone (Silent Audio & Video)
-                        </h3>
-                        <p class="text-slate-300 text-xs sm:text-base leading-relaxed mb-3">
-                             border-amber-500/20">03</span>
-                    Firebase Integration
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    Dynamic Edge Gesture Control utilizes <strong>Google Firebase</strong> to securely collect and process app data for diagnostic monitoring and performance tracking.
-                </p>
-
-                <div class="grid gridhext-amber-300 text-xs sm:text-sm font-semibold">
-                            <span>⚡</span> Performance Monitoring
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Measures startup timings and background memory footprint to ensure light battery usage across different devices.
-                        </p>
-                    </div>
-
-                    <div class="glass-card p-4 rounded-xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-1.5 text-amber-300 text-xs sm:text-sm font-semibold">
-                            <span>🗄️</span> Realtime Database
-                        </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
-                            Stores essential edge configuration data locally and securely linked to an anonymous installation ID.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Direct Firebase Privacy Links Box -->
-                <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200">
-                    <h4 class="font-bold text-amber-300 text-xs sm:text-sm mb-2 flex items-center gap-2">
-                        <span>🔗</span> Google Firebase Privacy Links:
-                    </h4>
-                    <div class="flex flex-wrap gap-2.5 text-xs font-medium">
-                        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all text-[11px] sm:text-xs">
-                            <span>Firebase Privacy Info</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500 hover:text-slate-950 transition-all text-[11px] sm:text-xs">
-                            <span>Google Privacy Policy</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 4: Google AdMob Privacy Policy & Links -->
-            <section id="admob" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">04</span>
-                    Monetization & Advertising
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    <p>
-                        To support ongoing development while offering free core features, Dynamic Edge Gesture Control integrates <strong>Google AdMob</strong> to display Rewarded Video Ads and Banner Ads.
-                    </p>
-                    <ul class="space-y-2 list-disc list-inside text-xs sm:text-sm text-slate-300">
-                        <li><strong>Advertising Identifiers:</strong> AdMob may collect device Advertising ID (GAID) and IP addresses to serve contextual advertisements.</li>
-                        <li><strong>Opt-Out:</strong> Reset or opt out of ad tracking on Android under <code>Settings -> Google -> Ads</code>.</li>
-                    </ul>
-                </div>
-
-                <!-- Direct AdMob Privacy Links Box -->
-                <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-200">
-                    <h4 class="font-bold text-blue-300 text-xs sm:text-sm mb-2 flex items-center gap-2">
-                        <span>📢</span> Google AdMob Policy Links:
-                    </h4>
-                    <div class="flex flex-wrap gap-2.5 text-xs font-medium">
-                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all text-[11px] sm:text-xs">
-                            <span>Google Ad Policies</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                        <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all text-[11px] sm:text-xs">
-                            <span>AdMob Help Center</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 5: Data Security & Retention -->
-            <section id="security" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">05</span>
-                    Security & Retention
-                </h2>
-                <div class="space-y-3 sm:space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    <p>
-                        <strong>Encryption in Transit:</strong> All network communications with Firebase servers use Transport Layer Security (TLS/HTTPS).
-                    </p>
-                    <p>
-                        <strong>Data Retention:</strong> Gesture profile configurations, user-generated media files, and personal text notes are stored locally on your device hardware. No personal account logins are required.
-                    </p>
-                    <p>
-                        <strong>Data Deletion:</strong> Uninstalling the application permanently removes all local settings, saved media and notes generated by the app, and profile data from your device.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Section 6: Children's Privacy -->
-            <section class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">06</span>
-                    Children's Privacy (COPPA / GDPR)
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Our application is intended for general audiences and does not knowingly collect personal identifiable information from children under 13 (or 16 in the European Union).
-                </p>
-            </section>
-
-            <!-- Section 7: Contact & Support -->
-            <section id="contact" class="policy-section glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-xl relative overflow-hidden border-2 border-blue-500/30">
-                <div class="absolute top-0 left-0 w-1 sm:w-1.5 h-full bg-gradient-to-b from-blue-500 to-indigo-500"></div>
-                <h2 class="text-lg sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4 flex items-center gap-2.5">
-                    <span class="text-blue-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 sm:py-1 rounded-md border border-blue-500/20">07</span>
-                    Contact Us & Support
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                    If you have questions, feedback, or concerns regarding this Privacy Policy or third-party integrations, please contact support:
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                    <a href="mailto:m.payra859appsupport@gmail.com" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-base shadow-lg shadow-blue-500/25 transition-all text-center">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        <span>Contact Support</span>
-                    </a>
-                    
-                    <button onclick="copyEmail()" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 transition-all text-xs sm:text-sm text-center">
-                        <span id="copyBtnText">Copy Email Address</span>
-                    </button>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 text-slate-500 text-xs sm:text-sm flex flex-col items-center gap-3">
-            
-            <!-- Badges Row: Last Updated & app-ads.txt -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
-                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400">
-                    <svg class="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    <span>Last Updated: July 27, 2026</span>
-                </div>
-
-                <a href="https://bullat859.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-[10px] sm:text-xs text-slate-400 hover:text-amber-300 hover:border-amber-500/40 hover:bg-amber-500/10 transition-all">
-                    <svg class="w-3 h-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    <span>app-ads.txt</span>
-                    <svg class="w-2.5 h-2.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Let's build something epic.</h2>
+          <p>I build high-quality Android apps with a focus on clean code and user experience. I'm passionate about creating intuitive mobile solutions that solve real-world problems.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="icon-wrapper"><i data-lucide="mail" size="18"></i></div>
+              <div>
+                <div class="contact-label">EMAIL</div>
+                <div class="contact-value">hello@androiddev.pro</div>
+              </div>
             </div>
+            
+            <div class="contact-item">
+              <div class="icon-wrapper"><i data-lucide="map-pin" size="18"></i></div>
+              <div>
+                <div class="contact-label">LOCATION</div>
+                <div class="contact-value">San Francisco, CA (Remote Friendly)</div>
+              </div>
+            </div>
+          </div>
 
-            <p>&copy; 2026 <a href="https://play.google.com/store/apps/details?id=com.m.payra.gesture.control.app" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 underline decoration-slate-700 underline-offset-4">Dynamic Edge Gesture Control</a>. All rights reserved.</p>
-            <p class="text-[11px] sm:text-xs text-slate-600 max-w-md mx-auto">Android, Google Play, Firebase, and AdMob are registered trademarks of Google LLC.</p>
-            <p class="text-xs sm:text-sm text-slate-400 font-medium flex items-center justify-center gap-1.5 pt-1">
-                <span>❤️</span> from Madhusudan Payra
-            </p>
-        </footer>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i data-lucide="github" size="18"></i></a>
+            <a href="#" class="social-icon"><i data-lucide="linkedin" size="18"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="name">FULL NAME</label>
+            <input type="text" id="name" placeholder="John Doe">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" id="email" placeholder="john@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">YOUR MESSAGE</label>
+            <textarea id="message" rows="4" placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Send Message <i data-lucide="send" size="16"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <div>
+        <span style="color: var(--accent-green); font-weight: 600;">Android Dev Portfolio</span>
+        <p style="margin-top: 4px; font-size: 0.75rem;">© 2024 Android Dev Portfolio. Built with precision.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">CodePen</a>
+      </div>
     </div>
-    
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600/90 text-white shadow-lg shadow-blue-500/30 border border-blue-400/30 opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:bg-blue-500">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
-    </button>
+  </footer>
 
-    <!-- JavaScript for Interactivity -->
-    <script>
-        function copyEmail() {
-            const email = "m.payra859appsupport@gmail.com";
-            const btnText = document.getElementById('copyBtnText');
-            
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            btnText.innerText = "Copied! ✓";
-            setTimeout(() => {
-                btnText.innerText = "Copy Email Address";
-            }, 3000);
-        }
-        
-        // Scroll Event Listener for Progress Bar and Scroll-To-Top button
-        window.addEventListener('scroll', () => {
-            // Calculate scroll progress
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-            
-            // Show/Hide Scroll to Top button
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (winScroll > 300) {
-                scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
-            } else {
-                scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-                scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
-            }
-        });
-    </script>
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
