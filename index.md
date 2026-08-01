@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Android Dev Portfolio</title>
-  <!-- Google Fonts for modern typography -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -208,22 +208,12 @@
       margin-top: 4px;
     }
 
-    .section-link {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
     /* FEATURED WORK */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
-      margin-bottom: 80px;
+      margin-bottom: 100px;
     }
 
     .project-card {
@@ -281,58 +271,6 @@
       display: flex;
       align-items: center;
       gap: 4px;
-    }
-
-    /* TECHNICAL INSIGHTS */
-    .blog-section {
-      margin-bottom: 80px;
-    }
-
-    .blog-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .blog-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .blog-icon-box {
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-green);
-      flex-shrink: 0;
-    }
-
-    .blog-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .blog-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .blog-desc {
-      color: var(--text-muted);
-      font-size: 0.85rem;
     }
 
     /* CONTACT SECTION */
@@ -511,7 +449,6 @@
       <a href="#" class="logo">Android Dev Portfolio</a>
       <ul class="nav-links">
         <li><a href="#projects" class="active">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
           <button class="theme-toggle" aria-label="Toggle theme">
@@ -591,47 +528,13 @@
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=500" alt="Project 3" class="project-img">
           <div class="tags">
             <span class="tag">FIREBASE</span>
-            <span class="tag">XMPP</span>
+            <span class="tag">SDK</span>
           </div>
           <h3 class="project-title">Project Title</h3>
           <p class="project-desc">Detailed description of your app's features and your role in the...</p>
           <div class="project-links">
             <a href="#"><i data-lucide="code-2" size="14"></i> View Code</a>
             <a href="#"><i data-lucide="external-link" size="14"></i> Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECHNICAL INSIGHTS SECTION -->
-    <section id="blog" class="blog-section">
-      <div class="section-header">
-        <h2 class="section-title">Technical Insights</h2>
-        <a href="#" class="section-link">READ ALL POSTS <i data-lucide="arrow-up-right" size="14"></i></a>
-      </div>
-
-      <div class="blog-list">
-        <!-- Post 1 -->
-        <div class="blog-card">
-          <div class="blog-icon-box">
-            <i data-lucide="zap" size="24"></i>
-          </div>
-          <div>
-            <div class="blog-meta">MARCH 28, 2024 • 8 MIN READ</div>
-            <h3 class="blog-title">Optimizing Jetpack Compose Performance</h3>
-            <p class="blog-desc">Deep dive into Recomposition, Subcomposition, and how to use the Layout Inspector to find bottlenecks in your Compose UI.</p>
-          </div>
-        </div>
-
-        <!-- Post 2 -->
-        <div class="blog-card">
-          <div class="blog-icon-box">
-            <i data-lucide="cpu" size="24"></i>
-          </div>
-          <div>
-            <div class="blog-meta">FEBRUARY 12, 2024 • 12 MIN READ</div>
-            <h3 class="blog-title">Mastering Kotlin Coroutines: Beyond the Basics</h3>
-            <p class="blog-desc">Exploring advanced Flow operators, Custom Dispatchers, and Structured Concurrency patterns for robust asynchronous code.</p>
           </div>
         </div>
       </div>
@@ -699,7 +602,7 @@
     <div class="container footer-container">
       <div>
         <span style="color: var(--accent-green); font-weight: 600;">Android Dev Portfolio</span>
-        <p style="margin-top: 4px; font-size: 0.75rem;">© 2024 Android Dev Portfolio. Built with precision.</p>
+        <p style="margin-top: 4px; font-size: 0.75rem;">© 2026 Android Dev Portfolio. Built with precision.</p>
       </div>
       <div class="footer-links">
         <a href="#">GitHub</a>
